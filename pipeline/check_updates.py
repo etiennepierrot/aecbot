@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Compare le site melenchon2027.fr en ligne aux manifests déjà committés
 (data/index.csv pour les pages/articles, data/pdf_manifest.json pour les PDF)
-et signale ce qui est nouveau ou modifié depuis la dernière collecte.
+et signale le contenu *programmatique* nouveau ou modifié depuis la dernière
+collecte : pages sous /programme/ (même filtre que collecte_wp.py) + PDF
+(livrets, plans, programme). Les pages hors programme (agenda, actus de
+campagne...) sont ignorées.
 
 Ne télécharge et n'écrit rien : seulement des appels API légers (id + date de
 modification, sans le contenu), pour savoir si ça vaut le coup de relancer le
@@ -15,12 +18,16 @@ import json
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
 BASE = 'https://melenchon2027.fr'
 API = BASE + '/wp-json/wp/v2'
 DATA = Path('data')
+# Même filtre que collecte_wp.py : seules les pages sous /programme/ sont du contenu
+# programmatique ; le reste (agenda, actus de campagne...) est hors-sujet ici.
+PROGRAMME_PREFIX = '/programme/'
 SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'AECBotUpdateCheck/1.0 (public research; respectful rate limit)', 'Accept': 'application/json'})
 
@@ -99,7 +106,8 @@ def main():
     known_pages = load_known_pages()
     known_pdfs = load_known_pdfs()
 
-    live_pages = fetch_all('pages', 'id,modified,title,link') + fetch_all('posts', 'id,modified,title,link')
+    all_pages = fetch_all('pages', 'id,modified,title,link') + fetch_all('posts', 'id,modified,title,link')
+    live_pages = [p for p in all_pages if urlparse(p.get('link', '')).path.startswith(PROGRAMME_PREFIX)]
     live_media = fetch_all('media', 'id,modified,title,source_url,mime_type')
     live_pdfs = [m for m in live_media if m.get('mime_type') == 'application/pdf']
 
@@ -124,12 +132,12 @@ def main():
         elif known_pdfs[pid] and modified > known_pdfs[pid]:
             changed_pdfs.append((pid, title, url, known_pdfs[pid], modified))
 
-    print(f"Pages/articles en ligne : {len(live_pages)} (déjà connus : {len(known_pages)})")
+    print(f"Pages programmatiques (/programme/) en ligne : {len(live_pages)}")
     print(f"PDF en ligne : {len(live_pdfs)} (déjà connus : {len(known_pdfs)})")
     print()
 
-    show("Nouvelles pages/articles", new_pages)
-    show("Pages/articles modifiés", changed_pages, with_dates=True)
+    show("Nouvelles pages programmatiques", new_pages)
+    show("Pages programmatiques modifiées", changed_pages, with_dates=True)
     show("Nouveaux PDF", new_pdfs)
     show("PDF modifiés", changed_pdfs, with_dates=True)
 
@@ -137,7 +145,7 @@ def main():
     if total == 0:
         print("Rien de nouveau : le corpus committé est à jour.")
         sys.exit(0)
-    print(f"-> {total} élément(s) à (re)collecter. Relancer le pipeline complet (voir pipeline/README.md).")
+    print(f"-> {total} élément(s) programmatique(s) à (re)collecter. Relancer le pipeline complet (voir pipeline/README.md).")
     sys.exit(1)
 
 
