@@ -95,6 +95,21 @@ python3 pipeline/test_column.py     # vérification visuelle, aucune écriture
 python3 pipeline/fix_programme.py   # applique la ré-extraction en 2 colonnes
 ```
 
+## Vérifier s'il y a du nouveau contenu avant de relancer
+
+`check_updates.py` compare le site en ligne aux manifests déjà committés (`data/index.csv`,
+`data/pdf_manifest.json`) par id + date de modification — sans rien télécharger ni écrire. Utile
+pour savoir si ça vaut le coup de relancer tout le pipeline (téléchargement de 265 Mo de PDFs
+compris) sans avoir à le faire pour vérifier.
+
+```bash
+python3 pipeline/check_updates.py
+```
+
+Affiche les pages/articles et PDF nouveaux ou modifiés depuis la dernière collecte. Code de sortie
+`0` si rien de nouveau, `1` si du contenu a changé (utilisable en script/cron), `2` si les manifests
+de référence n'existent pas encore (lancer d'abord le pipeline complet une première fois).
+
 ## Tout relancer depuis zéro
 
 ```bash

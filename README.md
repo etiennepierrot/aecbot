@@ -29,6 +29,10 @@ python3 pipeline/extract_pdf.py      # 3. extrait le texte des PDF page par page
 python3 pipeline/build_corpus.py     # 4. classe + déduplique + découpe            -> artifacts/gpt/AEC_*.md, artifacts/gpt_manifest.json
 ```
 
+Avant de relancer tout ça (265 Mo de PDFs à retélécharger), `python3 pipeline/check_updates.py`
+compare le site en ligne aux manifests déjà committés et dit s'il y a du nouveau contenu, sans rien
+télécharger ni écrire — voir [pipeline/README.md](pipeline/README.md) pour le détail.
+
 `pipeline/fix_programme.py` et `pipeline/test_column.py` sont des utilitaires ponctuels de
 réparation/debug pour un seul PDF connu pour mal s'extraire en une seule colonne
 (`15699_A5-PROGRAMME-SITE.pdf`) ; à lancer seulement pour ce document, après `extract_pdf.py` et

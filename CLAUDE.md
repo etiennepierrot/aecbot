@@ -10,8 +10,8 @@ into a corpus importable into a Custom GPT and into a Claude skill.
 
 The repo has three clearly separated top-level concerns:
 
-- **`pipeline/`** — the actual code: 4 ordered Python scripts + 2 one-off repair/debug utilities.
-  This is the only directory you'd normally edit by hand.
+- **`pipeline/`** — the actual code: 4 ordered Python scripts, a read-only update checker, and 2
+  one-off repair/debug utilities. This is the only directory you'd normally edit by hand.
 - **`data/`** — raw and intermediate data the pipeline produces (WP scrape, downloaded PDFs,
   per-PDF text extraction, manifests). Treat as **data, not code**.
 - **`artifacts/`** — final, consumable deliverables built from `data/`: the Custom GPT knowledge
@@ -56,6 +56,11 @@ specific document, after `extract_pdf.py`, before `build_corpus.py`.
 
 There is no lint/test command — correctness here means re-running the pipeline and checking the
 manifests (counts of included/excluded/error/duplicate) described below.
+
+Before re-running the full pipeline (which re-downloads 265 MB of PDFs), check whether there's
+actually anything new: `python3 pipeline/check_updates.py` compares the live site to the committed
+`data/index.csv` / `data/pdf_manifest.json` by id + modified date, read-only, no writes. Exit code
+`0` = nothing new, `1` = new/changed content found, `2` = no committed manifests to compare against yet.
 
 ## Pipeline architecture (why the files are organized this way)
 
