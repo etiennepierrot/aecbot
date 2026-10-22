@@ -1,0 +1,1745 @@
+{
+  "documents": [
+    {
+      "id": 25692,
+      "title": "Comment nous allons remettre de l ordre dans les comptes publics",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/Comment-nous-allons-remettre-de-l-ordre-dans-les-comptes-publics.pdf",
+      "modified": "2026-10-14T14:28:38",
+      "file": "corpus_aecbot/pdfs/25692_Comment-nous-allons-remettre-de-l-ordre-dans-les-comptes-publics.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25692_Comment-nous-allons-remettre-de-l-ordre-dans-les-comptes-publics.md",
+      "pages": 24,
+      "characters": 44597,
+      "status": "ok",
+      "category": "recent",
+      "note": "Publication mise en ligne en 2026 (date de rédaction à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "38c742f65555a3f3e3003f6dba3d8968082a13b934fa9fd9c15504510516849c",
+      "knowledge_files": [
+        {
+          "file": "AEC_04_publications_2026_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 25691,
+      "title": "PLAN AUTO_Vf_ST",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/PLAN-AUTO_Vf_ST.pdf",
+      "modified": "2026-10-14T16:58:22",
+      "file": "corpus_aecbot/pdfs/25691_PLAN-AUTO_Vf_ST.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25691_PLAN-AUTO_Vf_ST.md",
+      "pages": 26,
+      "characters": 48780,
+      "status": "ok",
+      "category": "recent",
+      "note": "Publication mise en ligne en 2026 (date de rédaction à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "679d6b63dac1d602670f5133086c53db70fcb75faa77f95e7cc170e9802f44ed",
+      "knowledge_files": [
+        {
+          "file": "AEC_04_publications_2026_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 25556,
+      "title": "_plan_RURALITE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/plan_RURALITE_web.pdf",
+      "modified": "2026-10-09T13:01:36",
+      "file": "corpus_aecbot/pdfs/25556_plan_RURALITE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25556_plan_RURALITE_web.md",
+      "pages": 32,
+      "characters": 44438,
+      "status": "ok",
+      "category": "recent",
+      "note": "Publication mise en ligne en 2026 (date de rédaction à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "476ab2c86cec2a1d83350c8352f99ef625ddbe729d108be78f9832f7415a0d2d",
+      "knowledge_files": [
+        {
+          "file": "AEC_04_publications_2026_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 25528,
+      "title": "DOSSIER DE PRESSE_0810",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/DOSSIER-DE-PRESSE_0810.pdf",
+      "modified": "2026-10-09T12:11:50",
+      "file": "corpus_aecbot/pdfs/25528_DOSSIER-DE-PRESSE_0810.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25528_DOSSIER-DE-PRESSE_0810.md",
+      "pages": 8,
+      "characters": 4424,
+      "status": "ok",
+      "category": "other",
+      "note": "Document de communication",
+      "included": false,
+      "reason": "Document secondaire/non classé exclu par défaut",
+      "sha256_normalized_body": "c43f23733dfb93fc08c0c7adee79eca2dcf515d421385cdca9b5405f746807d8"
+    },
+    {
+      "id": 25358,
+      "title": "DOSSIER DE PRESSE_7juin",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/DOSSIER-DE-PRESSE_7juin.pdf",
+      "modified": "2026-10-07T16:13:32",
+      "file": "corpus_aecbot/pdfs/25358_DOSSIER-DE-PRESSE_7juin.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25358_DOSSIER-DE-PRESSE_7juin.md",
+      "pages": 12,
+      "characters": 14571,
+      "status": "ok",
+      "category": "other",
+      "note": "Document de communication",
+      "included": false,
+      "reason": "Document secondaire/non classé exclu par défaut",
+      "sha256_normalized_body": "cbe6971d51fc7b774adeb07aa19f5f0a5789a7898ea825bba484805b67fbeb66"
+    },
+    {
+      "id": 25357,
+      "title": "DOSSIER DE PRESSE_23septembre",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/DOSSIER-DE-PRESSE_23septembre.pdf",
+      "modified": "2026-10-07T16:13:32",
+      "file": "corpus_aecbot/pdfs/25357_DOSSIER-DE-PRESSE_23septembre.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25357_DOSSIER-DE-PRESSE_23septembre.md",
+      "pages": 12,
+      "characters": 5810,
+      "status": "ok",
+      "category": "other",
+      "note": "Document de communication",
+      "included": false,
+      "reason": "Document secondaire/non classé exclu par défaut",
+      "sha256_normalized_body": "3675ae5561fcf4570b6a583ed18aebf3aa25d33aab5671a4579f7adb71f8c7c5"
+    },
+    {
+      "id": 25356,
+      "title": "DOSSIER DE PRESSE_2juillet",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/10/DOSSIER-DE-PRESSE_2juillet.pdf",
+      "modified": "2026-10-07T16:13:32",
+      "file": "corpus_aecbot/pdfs/25356_DOSSIER-DE-PRESSE_2juillet.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/25356_DOSSIER-DE-PRESSE_2juillet.md",
+      "pages": 12,
+      "characters": 15902,
+      "status": "ok",
+      "category": "other",
+      "note": "Document de communication",
+      "included": false,
+      "reason": "Document secondaire/non classé exclu par défaut",
+      "sha256_normalized_body": "9ab5ab4d71584bc01dfcb6f65c6853b6bd72ec45dad62d91fa84204465d455ee"
+    },
+    {
+      "id": 24362,
+      "title": "M 27 PLAN BTP LOGEMENT",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/09/M-27-PLAN-BTP-LOGEMENT.pdf",
+      "modified": "2026-09-28T15:01:42",
+      "file": "corpus_aecbot/pdfs/24362_M-27-PLAN-BTP-LOGEMENT.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/24362_M-27-PLAN-BTP-LOGEMENT.md",
+      "pages": 20,
+      "characters": 38363,
+      "status": "ok",
+      "category": "recent",
+      "note": "Publication mise en ligne en 2026 (date de rédaction à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "e3f6314c32288b5a5143276e3ccc7603e645a9c93b656d56f8dd2036d8465794",
+      "knowledge_files": [
+        {
+          "file": "AEC_04_publications_2026_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 22111,
+      "title": "A4_PROGRAMME_ABREGE_FALC_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/05/A4_PROGRAMME_ABREGE_FALC_web.pdf",
+      "modified": "2026-05-12T17:10:02",
+      "file": "corpus_aecbot/pdfs/22111_A4_PROGRAMME_ABREGE_FALC_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/22111_A4_PROGRAMME_ABREGE_FALC_web.md",
+      "pages": 0,
+      "characters": 0,
+      "status": "empty",
+      "category": "recent",
+      "note": "Publication mise en ligne en 2026 (date de rédaction à confirmer)",
+      "included": false,
+      "reason": "Extraction non exploitable"
+    },
+    {
+      "id": 19642,
+      "title": "PROGRAMME-FRONT-POPULAIRE",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2026/04/PROGRAMME-FRONT-POPULAIRE.pdf",
+      "modified": "2026-04-21T15:04:52",
+      "file": "corpus_aecbot/pdfs/19642_PROGRAMME-FRONT-POPULAIRE.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/19642_PROGRAMME-FRONT-POPULAIRE.md",
+      "pages": 26,
+      "characters": 60861,
+      "status": "ok",
+      "category": "archive",
+      "note": "Contrat du Nouveau Front populaire (2024), distinct du programme LFI",
+      "included": false,
+      "reason": "Archive exclue par défaut",
+      "sha256_normalized_body": "74a1ba1fb53b62cca4dc3222f950fffd53bfba4312c0e09c642fa76894414f64"
+    },
+    {
+      "id": 15699,
+      "title": "PROGRAMME SITE 2025",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2025/02/A5-PROGRAMME-SITE.pdf",
+      "modified": "2025-02-18T17:52:07",
+      "file": "corpus_aecbot/pdfs/15699_A5-PROGRAMME-SITE.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/15699_A5-PROGRAMME-SITE.md",
+      "pages": 69,
+      "characters": 368256,
+      "status": "ok",
+      "category": "programme",
+      "note": "Programme général (édition exacte à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "6bd36e1c2b8f2d3935ddc80457e73fe5ec4628d0c1e598e73661fa015ee68a2f",
+      "knowledge_files": [
+        {
+          "file": "AEC_01_programme_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13782,
+      "title": "Plan_UP_QUALIF_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_QUALIF_web-1.pdf",
+      "modified": "2024-02-22T19:16:19",
+      "file": "corpus_aecbot/pdfs/13782_Plan_UP_QUALIF_web-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13782_Plan_UP_QUALIF_web-1.md",
+      "pages": 32,
+      "characters": 80767,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "f8d3386768c119871eb9c8996208012960f473494902fe44e3a43ec77f2ee389",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13781,
+      "title": "Plan_UP_PROTECTIONNISME_web-2",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_PROTECTIONNISME_web-2-1.pdf",
+      "modified": "2024-02-22T19:16:18",
+      "file": "corpus_aecbot/pdfs/13781_Plan_UP_PROTECTIONNISME_web-2-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13781_Plan_UP_PROTECTIONNISME_web-2-1.md",
+      "pages": 36,
+      "characters": 87885,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "a64111478c52415c0308161019cf6bd9815215bdd4781c10d2399dfc37317c32",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13780,
+      "title": "Plan_UP_JUSTICE-FISCALE_web-3",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_JUSTICE-FISCALE_web-3-1.pdf",
+      "modified": "2024-02-22T19:16:17",
+      "file": "corpus_aecbot/pdfs/13780_Plan_UP_JUSTICE-FISCALE_web-3-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13780_Plan_UP_JUSTICE-FISCALE_web-3-1.md",
+      "pages": 32,
+      "characters": 104605,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "954fc93ae98984b6399b21473d6c33fe5a2a8ca259bb0d51f08ea0cd9b9f8a10",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13777,
+      "title": "Plan_UP_6e-REPUBLIQUE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_6e-REPUBLIQUE_web-1.pdf",
+      "modified": "2024-02-22T19:14:52",
+      "file": "corpus_aecbot/pdfs/13777_Plan_UP_6e-REPUBLIQUE_web-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13777_Plan_UP_6e-REPUBLIQUE_web-1.md",
+      "pages": 24,
+      "characters": 43821,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "8aa5745ddc2bf90607ffb2ef2426990c45afca3a49082792712a4f539c5a9a37",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13776,
+      "title": "Plan_UP_POUVOIR_ACHAT_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_POUVOIR_ACHAT_web-1.pdf",
+      "modified": "2024-02-22T19:14:51",
+      "file": "corpus_aecbot/pdfs/13776_Plan_UP_POUVOIR_ACHAT_web-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13776_Plan_UP_POUVOIR_ACHAT_web-1.md",
+      "pages": 32,
+      "characters": 77016,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "cd2002112cfab58350246cf427283266b0847e52afc02f2e71a37da1dfb673b9",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13775,
+      "title": "Plan_UP_REGLE-VERTE",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_REGLE-VERTE-1.pdf",
+      "modified": "2024-02-22T19:14:50",
+      "file": "corpus_aecbot/pdfs/13775_Plan_UP_REGLE-VERTE-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13775_Plan_UP_REGLE-VERTE-1.md",
+      "pages": 36,
+      "characters": 90938,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "1e957194b32fd36449afb982f4f43e23f4cb2546fa371b2add1373760f25b3cf",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13774,
+      "title": "Plan_UP_OUTRE-MER_WEB",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_OUTRE-MER_WEB-1.pdf",
+      "modified": "2024-02-22T19:14:42",
+      "file": "corpus_aecbot/pdfs/13774_Plan_UP_OUTRE-MER_WEB-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13774_Plan_UP_OUTRE-MER_WEB-1.md",
+      "pages": 32,
+      "characters": 68483,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "b120511bcfe809db57b364094bef8a9e089c482d917b5a81402e6b1a88ce1196",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13773,
+      "title": "Plan_UP_PLEIN-EMPLOI_sans_tdc",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_PLEIN-EMPLOI_sans_tdc-1.pdf",
+      "modified": "2024-02-22T19:14:41",
+      "file": "corpus_aecbot/pdfs/13773_Plan_UP_PLEIN-EMPLOI_sans_tdc-1.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13773_Plan_UP_PLEIN-EMPLOI_sans_tdc-1.md",
+      "pages": 28,
+      "characters": 58671,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "41a7fb7aa3709b7a9ac334784460f9de38d50f260c1ed4af6886d48579ad94ae",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13769,
+      "title": "Plan_UP_QUALIF_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_QUALIF_web.pdf",
+      "modified": "2024-02-22T19:12:49",
+      "file": "corpus_aecbot/pdfs/13769_Plan_UP_QUALIF_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13769_Plan_UP_QUALIF_web.md",
+      "pages": 32,
+      "characters": 80767,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13782",
+      "sha256_normalized_body": "f8d3386768c119871eb9c8996208012960f473494902fe44e3a43ec77f2ee389"
+    },
+    {
+      "id": 13768,
+      "title": "Plan_UP_PROTECTIONNISME_web-2",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_PROTECTIONNISME_web-2.pdf",
+      "modified": "2024-02-22T19:12:48",
+      "file": "corpus_aecbot/pdfs/13768_Plan_UP_PROTECTIONNISME_web-2.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13768_Plan_UP_PROTECTIONNISME_web-2.md",
+      "pages": 36,
+      "characters": 87885,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13781",
+      "sha256_normalized_body": "a64111478c52415c0308161019cf6bd9815215bdd4781c10d2399dfc37317c32"
+    },
+    {
+      "id": 13767,
+      "title": "Plan_UP_JUSTICE-FISCALE_web-3",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_JUSTICE-FISCALE_web-3.pdf",
+      "modified": "2024-02-22T19:12:46",
+      "file": "corpus_aecbot/pdfs/13767_Plan_UP_JUSTICE-FISCALE_web-3.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13767_Plan_UP_JUSTICE-FISCALE_web-3.md",
+      "pages": 32,
+      "characters": 104605,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13780",
+      "sha256_normalized_body": "954fc93ae98984b6399b21473d6c33fe5a2a8ca259bb0d51f08ea0cd9b9f8a10"
+    },
+    {
+      "id": 13766,
+      "title": "Plan_UP_6e-REPUBLIQUE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_6e-REPUBLIQUE_web.pdf",
+      "modified": "2024-02-22T19:12:45",
+      "file": "corpus_aecbot/pdfs/13766_Plan_UP_6e-REPUBLIQUE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13766_Plan_UP_6e-REPUBLIQUE_web.md",
+      "pages": 24,
+      "characters": 43821,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13777",
+      "sha256_normalized_body": "8aa5745ddc2bf90607ffb2ef2426990c45afca3a49082792712a4f539c5a9a37"
+    },
+    {
+      "id": 13765,
+      "title": "Plan_UP_POUVOIR_ACHAT_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_POUVOIR_ACHAT_web.pdf",
+      "modified": "2024-02-22T19:12:44",
+      "file": "corpus_aecbot/pdfs/13765_Plan_UP_POUVOIR_ACHAT_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13765_Plan_UP_POUVOIR_ACHAT_web.md",
+      "pages": 32,
+      "characters": 77016,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13776",
+      "sha256_normalized_body": "cd2002112cfab58350246cf427283266b0847e52afc02f2e71a37da1dfb673b9"
+    },
+    {
+      "id": 13763,
+      "title": "Plan_UP_REGLE-VERTE",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_REGLE-VERTE.pdf",
+      "modified": "2024-02-22T19:12:42",
+      "file": "corpus_aecbot/pdfs/13763_Plan_UP_REGLE-VERTE.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13763_Plan_UP_REGLE-VERTE.md",
+      "pages": 36,
+      "characters": 90938,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13775",
+      "sha256_normalized_body": "1e957194b32fd36449afb982f4f43e23f4cb2546fa371b2add1373760f25b3cf"
+    },
+    {
+      "id": 13760,
+      "title": "Plan_UP_FEMINICIDES_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_FEMINICIDES_web.pdf",
+      "modified": "2024-02-22T19:10:44",
+      "file": "corpus_aecbot/pdfs/13760_Plan_UP_FEMINICIDES_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13760_Plan_UP_FEMINICIDES_web.md",
+      "pages": 36,
+      "characters": 80193,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "de55dc57ded0cacb8f860f211fb5c02c15685ee6eff24bb3992f46c8dcd303c4",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13759,
+      "title": "Plan_UP_OUTRE-MER_WEB",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_OUTRE-MER_WEB.pdf",
+      "modified": "2024-02-22T19:10:44",
+      "file": "corpus_aecbot/pdfs/13759_Plan_UP_OUTRE-MER_WEB.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13759_Plan_UP_OUTRE-MER_WEB.md",
+      "pages": 32,
+      "characters": 68483,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13774",
+      "sha256_normalized_body": "b120511bcfe809db57b364094bef8a9e089c482d917b5a81402e6b1a88ce1196"
+    },
+    {
+      "id": 13758,
+      "title": "Plan_UP_PLEIN-EMPLOI_sans_tdc",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_PLEIN-EMPLOI_sans_tdc.pdf",
+      "modified": "2024-02-22T19:10:42",
+      "file": "corpus_aecbot/pdfs/13758_Plan_UP_PLEIN-EMPLOI_sans_tdc.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13758_Plan_UP_PLEIN-EMPLOI_sans_tdc.md",
+      "pages": 28,
+      "characters": 58671,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": false,
+      "reason": "Doublon exact de 13773",
+      "sha256_normalized_body": "41a7fb7aa3709b7a9ac334784460f9de38d50f260c1ed4af6886d48579ad94ae"
+    },
+    {
+      "id": 13757,
+      "title": "Plan_UP_SDF",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_SDF.pdf",
+      "modified": "2024-02-22T19:10:40",
+      "file": "corpus_aecbot/pdfs/13757_Plan_UP_SDF.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13757_Plan_UP_SDF.md",
+      "pages": 32,
+      "characters": 64582,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "e2886ea0e7a64cc4ff479c14a53a0e41d431a44d43d7fd4f7dcdc14e8fa1ba3f",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13756,
+      "title": "PLAN_UP_ALIM_VF2_IMPRESSION_VWEB-2",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/PLAN_UP_ALIM_VF2_IMPRESSION_VWEB-2.pdf",
+      "modified": "2024-02-22T19:10:39",
+      "file": "corpus_aecbot/pdfs/13756_PLAN_UP_ALIM_VF2_IMPRESSION_VWEB-2.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13756_PLAN_UP_ALIM_VF2_IMPRESSION_VWEB-2.md",
+      "pages": 32,
+      "characters": 69151,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "7ebd011d75d9e2f8f2c93470d21fa6df8c3145a0c2681bb14fcc5ac970883971",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13755,
+      "title": "PLAN-EUROPE_AVENIR-EN-COMMUN",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/PLAN-EUROPE_AVENIR-EN-COMMUN.pdf",
+      "modified": "2024-02-22T19:10:37",
+      "file": "corpus_aecbot/pdfs/13755_PLAN-EUROPE_AVENIR-EN-COMMUN.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13755_PLAN-EUROPE_AVENIR-EN-COMMUN.md",
+      "pages": 40,
+      "characters": 108220,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "b8ef0fa1cb3cc9cf2f965d647d063e473f449faf6687754005afbdadc9e11ff2",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 13753,
+      "title": "Plan_UP_PAUVRETE",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Plan_UP_PAUVRETE.pdf",
+      "modified": "2024-02-22T19:09:25",
+      "file": "corpus_aecbot/pdfs/13753_Plan_UP_PAUVRETE.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/13753_Plan_UP_PAUVRETE.md",
+      "pages": 32,
+      "characters": 62619,
+      "status": "ok",
+      "category": "plan",
+      "note": "Plan thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "8e5dc0328e9737d009d8040d5f2683370dfe6632a0f5f2740baedd3084d442be",
+      "knowledge_files": [
+        {
+          "file": "AEC_03_plans_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12930,
+      "title": "LETTRE-AUX-ENSEIGNANTS",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/LETTRE-AUX-ENSEIGNANTS.pdf",
+      "modified": "2024-02-08T16:49:09",
+      "file": "corpus_aecbot/pdfs/12930_LETTRE-AUX-ENSEIGNANTS.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12930_LETTRE-AUX-ENSEIGNANTS.md",
+      "pages": 2,
+      "characters": 4300,
+      "status": "ok",
+      "category": "other",
+      "note": "Document de communication",
+      "included": false,
+      "reason": "Document secondaire/non classé exclu par défaut",
+      "sha256_normalized_body": "1d223c21addc2b3409f91ddbe36108bcc5c5ab601546dcbf6957453985b530fe"
+    },
+    {
+      "id": 12372,
+      "title": "Livret_UP_32_ESS_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_32_ESS_web-ok.pdf",
+      "modified": "2024-02-02T16:11:01",
+      "file": "corpus_aecbot/pdfs/12372_Livret_UP_32_ESS_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12372_Livret_UP_32_ESS_web-ok.md",
+      "pages": 11,
+      "characters": 57799,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "2a55e0b858b4434517033f96953632a2c4d72edcbbd8fe25243e724701819e6c",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12371,
+      "title": "Livret_UP_29_FRA-ETR_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_29_FRA-ETR_web-ok.pdf",
+      "modified": "2024-02-02T16:11:01",
+      "file": "corpus_aecbot/pdfs/12371_Livret_UP_29_FRA-ETR_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12371_Livret_UP_29_FRA-ETR_web-ok.md",
+      "pages": 12,
+      "characters": 18355,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "b9c9ee8810d98f5fc60c28f944d0d88ed8c4320938c97740d469c8c83569ac21",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12370,
+      "title": "Livret_UP_10_LGBTI_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_10_LGBTI_web-ok.pdf",
+      "modified": "2024-02-02T16:11:00",
+      "file": "corpus_aecbot/pdfs/12370_Livret_UP_10_LGBTI_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12370_Livret_UP_10_LGBTI_web-ok.md",
+      "pages": 20,
+      "characters": 31628,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "75b3869e4f411b51265355276f83ea41d72ed4210a638811fbdb1cfed29170f6",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12369,
+      "title": "Livret_UP_11_EAU_web-2 (1)-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_11_EAU_web-2-1-ok.pdf",
+      "modified": "2024-02-02T16:11:00",
+      "file": "corpus_aecbot/pdfs/12369_Livret_UP_11_EAU_web-2-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12369_Livret_UP_11_EAU_web-2-1-ok.md",
+      "pages": 24,
+      "characters": 47786,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "d1e79439673aa8c6513c1c79b4128d2c6aae15930bab8142b67bd3176e56d1f6",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12368,
+      "title": "Livret_UP_42_FORET_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_42_FORET_web-ok.pdf",
+      "modified": "2024-02-02T16:11:00",
+      "file": "corpus_aecbot/pdfs/12368_Livret_UP_42_FORET_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12368_Livret_UP_42_FORET_web-ok.md",
+      "pages": 20,
+      "characters": 36621,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "c6f05f9dd3c7ad85f2c365ee80f95d6a50dd5786d27f23688477a328cb48e39b",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12367,
+      "title": "Livret_UP_12_CULTURE_web-2-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_12_CULTURE_web-2-ok.pdf",
+      "modified": "2024-02-02T16:10:59",
+      "file": "corpus_aecbot/pdfs/12367_Livret_UP_12_CULTURE_web-2-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12367_Livret_UP_12_CULTURE_web-2-ok.md",
+      "pages": 24,
+      "characters": 53787,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "b75b755c52e691bd9999ea9948f5b3a96b482521a39668d0d4e7a9ce3b8a0de8",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12366,
+      "title": "Livret_UP_40_6e-REP_web (1)-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_40_6e-REP_web-1-ok.pdf",
+      "modified": "2024-02-02T16:10:59",
+      "file": "corpus_aecbot/pdfs/12366_Livret_UP_40_6e-REP_web-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12366_Livret_UP_40_6e-REP_web-1-ok.md",
+      "pages": 24,
+      "characters": 52547,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "adf1bc69c6a2b21de62310c278abe919a7d4c77fd284348639b14385f37486be",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12365,
+      "title": "Livret_UP_25_JUSTICE_web-1-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_25_JUSTICE_web-1-ok.pdf",
+      "modified": "2024-02-02T16:10:59",
+      "file": "corpus_aecbot/pdfs/12365_Livret_UP_25_JUSTICE_web-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12365_Livret_UP_25_JUSTICE_web-1-ok.md",
+      "pages": 24,
+      "characters": 49851,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "86fe8f95444dafce81e76ac91c8e74a7c54e1fe6947a8b3232e684f82c3da22f",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12364,
+      "title": "Livret_UP_07_ECOLOGIE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_07_ECOLOGIE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:56",
+      "file": "corpus_aecbot/pdfs/12364_Livret_UP_07_ECOLOGIE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12364_Livret_UP_07_ECOLOGIE_web-ok.md",
+      "pages": 20,
+      "characters": 44820,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "1f997e3bb35f931477a3b3304434a45ff8866f80edcf4a29d0cadc65f062b25f",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12363,
+      "title": "Livret_UP_27_JEUNESSE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_27_JEUNESSE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:56",
+      "file": "corpus_aecbot/pdfs/12363_Livret_UP_27_JEUNESSE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12363_Livret_UP_27_JEUNESSE_web-ok.md",
+      "pages": 20,
+      "characters": 40295,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "96635523a0ff92bddf2e2ee1f55a6418cdb4a9ab5cff748d8ea19fe4088a98d5",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12362,
+      "title": "Livret_UP_14_SPORT_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_14_SPORT_web-ok.pdf",
+      "modified": "2024-02-02T16:10:55",
+      "file": "corpus_aecbot/pdfs/12362_Livret_UP_14_SPORT_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12362_Livret_UP_14_SPORT_web-ok.md",
+      "pages": 20,
+      "characters": 41981,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "eb445045f27063cc180bf406e454b691abdcc06f0be9d181b4b57e72dc6914b5",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12361,
+      "title": "Livret_UP_13_SANTE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_13_SANTE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:55",
+      "file": "corpus_aecbot/pdfs/12361_Livret_UP_13_SANTE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12361_Livret_UP_13_SANTE_web-ok.md",
+      "pages": 24,
+      "characters": 50786,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "a2998ed8acd85a1810a199891390e67b0d95fc0f880b9710ddf58189323ab893",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12360,
+      "title": "Livret_UP_31_EFH_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_31_EFH_web-ok.pdf",
+      "modified": "2024-02-02T16:10:55",
+      "file": "corpus_aecbot/pdfs/12360_Livret_UP_31_EFH_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12360_Livret_UP_31_EFH_web-ok.md",
+      "pages": 20,
+      "characters": 35905,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "197bc310b96728ec86af778c184698da8037ba43c081c54f3a61888d98fb7625",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12359,
+      "title": "Livret_UP_28_SECURITE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_28_SECURITE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:54",
+      "file": "corpus_aecbot/pdfs/12359_Livret_UP_28_SECURITE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12359_Livret_UP_28_SECURITE_web-ok.md",
+      "pages": 28,
+      "characters": 68674,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "599a6cc57351cdfdca1860cf49d6f7435ce9089402df09ce45d4653e00a856e5",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12358,
+      "title": "Livret_UP_24_AGRICULTURE_web (1)-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_24_AGRICULTURE_web-1-ok.pdf",
+      "modified": "2024-02-02T16:10:54",
+      "file": "corpus_aecbot/pdfs/12358_Livret_UP_24_AGRICULTURE_web-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12358_Livret_UP_24_AGRICULTURE_web-1-ok.md",
+      "pages": 24,
+      "characters": 61364,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "94592aa68dc53bffe53ea9efd58165ce213bf377b807a7dc6ed5fbee4d76b48a",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12357,
+      "title": "Livret_UP_21_EMPLOI_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_21_EMPLOI_web-ok.pdf",
+      "modified": "2024-02-02T16:10:54",
+      "file": "corpus_aecbot/pdfs/12357_Livret_UP_21_EMPLOI_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12357_Livret_UP_21_EMPLOI_web-ok.md",
+      "pages": 24,
+      "characters": 58524,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "5cc173488e67ee22f3001a7cadfcc6e31295a0568fe7c7c30e3428c321a9369a",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12356,
+      "title": "Livret_UP_16_ESPACE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_16_ESPACE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:53",
+      "file": "corpus_aecbot/pdfs/12356_Livret_UP_16_ESPACE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12356_Livret_UP_16_ESPACE_web-ok.md",
+      "pages": 20,
+      "characters": 42752,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "c2403ed3b599a77d92cc4069acc520fea3b01cdfc2543aeb22b6a9ae3df0aaf6",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12355,
+      "title": "LIVRET-EDUCATION_AEC_WEB-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/LIVRET-EDUCATION_AEC_WEB-ok.pdf",
+      "modified": "2024-02-02T16:10:53",
+      "file": "corpus_aecbot/pdfs/12355_LIVRET-EDUCATION_AEC_WEB-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12355_LIVRET-EDUCATION_AEC_WEB-ok.md",
+      "pages": 24,
+      "characters": 49288,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "d672a97f50b784a8a97f01c4f3c901dbfb644cb1df160d3dfbb1829c63563fba",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12354,
+      "title": "Livret_UP_19_HANDICAP_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_19_HANDICAP_web-ok.pdf",
+      "modified": "2024-02-02T16:10:52",
+      "file": "corpus_aecbot/pdfs/12354_Livret_UP_19_HANDICAP_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12354_Livret_UP_19_HANDICAP_web-ok.md",
+      "pages": 20,
+      "characters": 40844,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "36592c4f021931720c22561fd2c7588b00a1ef5865d65f79c52a1a21bc6c9b6d",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12353,
+      "title": "Livret_UP_20_TRANSPORT_web-1-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_20_TRANSPORT_web-1-ok.pdf",
+      "modified": "2024-02-02T16:10:52",
+      "file": "corpus_aecbot/pdfs/12353_Livret_UP_20_TRANSPORT_web-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12353_Livret_UP_20_TRANSPORT_web-1-ok.md",
+      "pages": 20,
+      "characters": 34927,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "e95702dcad1de576856378ba881c775b1bc06cc71413cc3e400bc1570969ad01",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12352,
+      "title": "Livret_UP_18_MER_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_18_MER_web-ok.pdf",
+      "modified": "2024-02-02T16:10:52",
+      "file": "corpus_aecbot/pdfs/12352_Livret_UP_18_MER_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12352_Livret_UP_18_MER_web-ok.md",
+      "pages": 24,
+      "characters": 55467,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "d18e30dca41a03b7b1a88d9a298cb482034a1424f8735a77a4b3d3225f7d30d9",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12351,
+      "title": "Livret_UP_08_ENERGIES_web-3-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_08_ENERGIES_web-3-ok.pdf",
+      "modified": "2024-02-02T16:10:51",
+      "file": "corpus_aecbot/pdfs/12351_Livret_UP_08_ENERGIES_web-3-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12351_Livret_UP_08_ENERGIES_web-3-ok.md",
+      "pages": 20,
+      "characters": 41121,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "222786a27ea7b02bffe9acdc72de006e34b16b6deb38225345bfe72aa9807126",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12350,
+      "title": "Livret_UP_05_DEFENSE_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_05_DEFENSE_web-ok.pdf",
+      "modified": "2024-02-02T16:10:51",
+      "file": "corpus_aecbot/pdfs/12350_Livret_UP_05_DEFENSE_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12350_Livret_UP_05_DEFENSE_web-ok.md",
+      "pages": 24,
+      "characters": 60285,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "ea02db257427f6df798fc7ce91af8702b3633d56ea7ea7f02d917d17b1934bf7",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12349,
+      "title": "Livret_UP_06_MIGRATION_web-1-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_06_MIGRATION_web-1-ok.pdf",
+      "modified": "2024-02-02T16:10:50",
+      "file": "corpus_aecbot/pdfs/12349_Livret_UP_06_MIGRATION_web-1-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12349_Livret_UP_06_MIGRATION_web-1-ok.md",
+      "pages": 20,
+      "characters": 51312,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "df836706e000d7fdbc2946f0a0f967e1995f90fb43440bac3486003b5fe43ce2",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12348,
+      "title": "Livret_UP_09_LOGEMENT-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_09_LOGEMENT-ok.pdf",
+      "modified": "2024-02-02T16:10:50",
+      "file": "corpus_aecbot/pdfs/12348_Livret_UP_09_LOGEMENT-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12348_Livret_UP_09_LOGEMENT-ok.md",
+      "pages": 20,
+      "characters": 39118,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "fa591e3616569679fb4af891a8bdff30b1f8acfe3b5bb120e46fbb598d18463e",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12347,
+      "title": "Livret_UP_36_VIEILLIR_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_36_VIEILLIR_web-ok.pdf",
+      "modified": "2024-02-02T16:10:49",
+      "file": "corpus_aecbot/pdfs/12347_Livret_UP_36_VIEILLIR_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12347_Livret_UP_36_VIEILLIR_web-ok.md",
+      "pages": 20,
+      "characters": 32792,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "384452cffc82082e198bb64041fdac4f78f26c7f1a084cde18ca897b4942d7b9",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12346,
+      "title": "Livret_UP_04_OUTRE-MER-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_04_OUTRE-MER-ok.pdf",
+      "modified": "2024-02-02T16:10:49",
+      "file": "corpus_aecbot/pdfs/12346_Livret_UP_04_OUTRE-MER-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12346_Livret_UP_04_OUTRE-MER-ok.md",
+      "pages": 22,
+      "characters": 41163,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "f0dd75da09ce429d34cd4c1b5925b40d468c4121bf2548e84d7b9bc609d88a4d",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12345,
+      "title": "Livret_UP_03_PAIX_web-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_03_PAIX_web-ok.pdf",
+      "modified": "2024-02-02T16:10:49",
+      "file": "corpus_aecbot/pdfs/12345_Livret_UP_03_PAIX_web-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12345_Livret_UP_03_PAIX_web-ok.md",
+      "pages": 24,
+      "characters": 63701,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "beee3024d554fcb3ff3bcc1554d9747c3f3302650733e36ecb59b0a5b2d0c46a",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12344,
+      "title": "ASS-LIVRET-ESR_VF_220121_VWEB-ok",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/ASS-LIVRET-ESR_VF_220121_VWEB-ok.pdf",
+      "modified": "2024-02-02T16:10:48",
+      "file": "corpus_aecbot/pdfs/12344_ASS-LIVRET-ESR_VF_220121_VWEB-ok.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12344_ASS-LIVRET-ESR_VF_220121_VWEB-ok.md",
+      "pages": 20,
+      "characters": 38095,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "fe7e881c7cbe1803474a2ad6d9c74dd4d977fa03ee1a0b8dbfb20f15253d0295",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_01.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12343,
+      "title": "Livret_UP_17_NUMERIQUE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_17_NUMERIQUE_web.pdf",
+      "modified": "2024-02-02T16:10:48",
+      "file": "corpus_aecbot/pdfs/12343_Livret_UP_17_NUMERIQUE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12343_Livret_UP_17_NUMERIQUE_web.md",
+      "pages": 20,
+      "characters": 40771,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "228958c44812d9799fc628135f782c9f5abfa1d0f23d961dd6ea6f3651c0900b",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12342,
+      "title": "Livret_UP_33_PRODUIRE-FRANCE_web-2",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_33_PRODUIRE-FRANCE_web-2.pdf",
+      "modified": "2024-02-02T16:10:47",
+      "file": "corpus_aecbot/pdfs/12342_Livret_UP_33_PRODUIRE-FRANCE_web-2.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12342_Livret_UP_33_PRODUIRE-FRANCE_web-2.md",
+      "pages": 24,
+      "characters": 50872,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "2205cd55b69e84f4d78b578729f2d150b82084ee80f694e8168b6e29243caad0",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12341,
+      "title": "Livret_UP_38_ENFANCE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_38_ENFANCE_web.pdf",
+      "modified": "2024-02-02T16:10:47",
+      "file": "corpus_aecbot/pdfs/12341_Livret_UP_38_ENFANCE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12341_Livret_UP_38_ENFANCE_web.md",
+      "pages": 20,
+      "characters": 41451,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "015883e2ecf80f28b7fc968cab0c1218e7fccff5ec405843b8ba944089667585",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12340,
+      "title": "Livret_UP_30_DROIT_TRAVAIL_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_30_DROIT_TRAVAIL_web.pdf",
+      "modified": "2024-02-02T16:10:47",
+      "file": "corpus_aecbot/pdfs/12340_Livret_UP_30_DROIT_TRAVAIL_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12340_Livret_UP_30_DROIT_TRAVAIL_web.md",
+      "pages": 24,
+      "characters": 50266,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "6ddae4a12bdaf2fae16f5b6e61ce52c65aee75eb83df3f3e680e3b2be7254414",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12339,
+      "title": "Livret_UP_35_CONDITION-ANIMALE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_35_CONDITION-ANIMALE_web.pdf",
+      "modified": "2024-02-02T16:10:46",
+      "file": "corpus_aecbot/pdfs/12339_Livret_UP_35_CONDITION-ANIMALE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12339_Livret_UP_35_CONDITION-ANIMALE_web.md",
+      "pages": 24,
+      "characters": 61819,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "8a7d567e84a53c0254261ec2899a72cc97026a977fda8658f563d7b872feed9c",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12338,
+      "title": "Livret_UP_39_MEDIAS_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_39_MEDIAS_web.pdf",
+      "modified": "2024-02-02T16:10:46",
+      "file": "corpus_aecbot/pdfs/12338_Livret_UP_39_MEDIAS_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12338_Livret_UP_39_MEDIAS_web.md",
+      "pages": 20,
+      "characters": 46973,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "04ea5040ba1d34a582c2db5fe149b48daecb2021f9efe41387acabfe17799dbe",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12337,
+      "title": "Livret_UP_41_DISCRIMINATIONS_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_41_DISCRIMINATIONS_web.pdf",
+      "modified": "2024-02-02T16:10:46",
+      "file": "corpus_aecbot/pdfs/12337_Livret_UP_41_DISCRIMINATIONS_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12337_Livret_UP_41_DISCRIMINATIONS_web.md",
+      "pages": 20,
+      "characters": 42052,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "25b6f2c6c524218957f068187bada652c147473bc34eb2edad3338e1b588732e",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12336,
+      "title": "Livret_UP_26_DECHETS_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_26_DECHETS_web.pdf",
+      "modified": "2024-02-02T16:10:46",
+      "file": "corpus_aecbot/pdfs/12336_Livret_UP_26_DECHETS_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12336_Livret_UP_26_DECHETS_web.md",
+      "pages": 16,
+      "characters": 30229,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "88e50193c3b7eeccf56f10e67062d78213da6c5cbf4788929e496670b9bf9cb1",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12335,
+      "title": "Livret_UP_34_FRANCOPHONIE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_34_FRANCOPHONIE_web.pdf",
+      "modified": "2024-02-02T16:10:45",
+      "file": "corpus_aecbot/pdfs/12335_Livret_UP_34_FRANCOPHONIE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12335_Livret_UP_34_FRANCOPHONIE_web.md",
+      "pages": 20,
+      "characters": 39069,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "c6c66474e51e8fb275ad5e0305ad37d1c7ecf4a7784017f24bb685f4f61cc4a4",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_04.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12334,
+      "title": "Livret_UP_23_LAICITE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_23_LAICITE_web.pdf",
+      "modified": "2024-02-02T16:10:45",
+      "file": "corpus_aecbot/pdfs/12334_Livret_UP_23_LAICITE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12334_Livret_UP_23_LAICITE_web.md",
+      "pages": 16,
+      "characters": 33352,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "b07572ff5c76a27e40642ebb49bc60ce4a1dfa772219d8254ace5cb8062defb3",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12333,
+      "title": "Livret_UP_22_RURALITE_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_22_RURALITE_web.pdf",
+      "modified": "2024-02-02T16:10:44",
+      "file": "corpus_aecbot/pdfs/12333_Livret_UP_22_RURALITE_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12333_Livret_UP_22_RURALITE_web.md",
+      "pages": 24,
+      "characters": 54018,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "c3e0cd2450b078587dda3ccb611389f20ad0fe4bd84ae59c0c1b6cfeb5be6881",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_03.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12332,
+      "title": "Livret_UP_15_BANQUES_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_15_BANQUES_web.pdf",
+      "modified": "2024-02-02T16:10:44",
+      "file": "corpus_aecbot/pdfs/12332_Livret_UP_15_BANQUES_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12332_Livret_UP_15_BANQUES_web.md",
+      "pages": 24,
+      "characters": 77752,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "107f778a4846b7073a2c90cb7c7167adb1879ced53f37fe5dfb40c917cf98cb3",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_02.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    },
+    {
+      "id": 12331,
+      "title": "Livret_UP_37_QUARTIERS-POPULAIRES_web",
+      "url": "https://melenchon2027.fr/wp-content/uploads/2024/02/Livret_UP_37_QUARTIERS-POPULAIRES_web.pdf",
+      "modified": "2024-02-02T16:10:44",
+      "file": "corpus_aecbot/pdfs/12331_Livret_UP_37_QUARTIERS-POPULAIRES_web.pdf",
+      "markdown": "corpus_aecbot/pdf_markdown/12331_Livret_UP_37_QUARTIERS-POPULAIRES_web.md",
+      "pages": 20,
+      "characters": 52941,
+      "status": "ok",
+      "category": "livret",
+      "note": "Livret thématique (édition à confirmer)",
+      "included": true,
+      "reason": "",
+      "sha256_normalized_body": "06ec02928aa78feb78db75a22173d197dab3506268dda538ce0b8ebc2cccc07b",
+      "knowledge_files": [
+        {
+          "file": "AEC_02_livrets_05.md",
+          "part": 1,
+          "parts": 1
+        }
+      ]
+    }
+  ],
+  "knowledge_files": [
+    {
+      "file": "AEC_01_programme_01.md",
+      "bytes": 277634,
+      "documents": [
+        15699
+      ]
+    },
+    {
+      "file": "AEC_02_livrets_01.md",
+      "bytes": 452379,
+      "documents": [
+        12344,
+        12345,
+        12346,
+        12348,
+        12349,
+        12350,
+        12351,
+        12355,
+        12364
+      ]
+    },
+    {
+      "file": "AEC_02_livrets_02.md",
+      "bytes": 407084,
+      "documents": [
+        12332,
+        12343,
+        12356,
+        12361,
+        12362,
+        12367,
+        12369,
+        12370
+      ]
+    },
+    {
+      "file": "AEC_02_livrets_03.md",
+      "bytes": 441398,
+      "documents": [
+        12333,
+        12334,
+        12336,
+        12352,
+        12353,
+        12354,
+        12357,
+        12358,
+        12365
+      ]
+    },
+    {
+      "file": "AEC_02_livrets_04.md",
+      "bytes": 449317,
+      "documents": [
+        12335,
+        12339,
+        12340,
+        12342,
+        12359,
+        12360,
+        12363,
+        12371,
+        12372
+      ]
+    },
+    {
+      "file": "AEC_02_livrets_05.md",
+      "bytes": 329972,
+      "documents": [
+        12331,
+        12337,
+        12338,
+        12341,
+        12347,
+        12366,
+        12368
+      ]
+    },
+    {
+      "file": "AEC_03_plans_01.md",
+      "bytes": 422597,
+      "documents": [
+        13755,
+        13756,
+        13760,
+        13777,
+        13780
+      ]
+    },
+    {
+      "file": "AEC_03_plans_02.md",
+      "bytes": 453350,
+      "documents": [
+        13753,
+        13773,
+        13774,
+        13776,
+        13781,
+        13782
+      ]
+    },
+    {
+      "file": "AEC_03_plans_03.md",
+      "bytes": 161817,
+      "documents": [
+        13757,
+        13775
+      ]
+    },
+    {
+      "file": "AEC_04_publications_2026_01.md",
+      "bytes": 185315,
+      "documents": [
+        24362,
+        25556,
+        25691,
+        25692
+      ]
+    }
+  ]
+}

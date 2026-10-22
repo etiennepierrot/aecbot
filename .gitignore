@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# PDFs sources bruts : publics, régénérables via `python3 download_pdfs.py`
+corpus_aecbot/pdfs/
