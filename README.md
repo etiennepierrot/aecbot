@@ -6,7 +6,8 @@ Jean-Luc Mélenchon, 2027) depuis `melenchon2027.fr` : pages WordPress sous `/pr
 un Custom GPT et dans un skill Claude.
 
 Trois dossiers racine, séparés par rôle (voir [CLAUDE.md](CLAUDE.md) pour le détail complet) :
-- **`pipeline/`** — le code : les 4 scripts du pipeline + 2 utilitaires ponctuels.
+- **`pipeline/`** — le code : les 4 scripts du pipeline + 2 utilitaires ponctuels (détail de chaque
+  script et instructions d'usage dans [pipeline/README.md](pipeline/README.md)).
 - **`data/`** — les données brutes et intermédiaires produites par le pipeline.
 - **`artifacts/`** — les livrables finaux construits à partir de `data/` : le corpus pour Custom
   GPT (`gpt/`), l'import GPT direct (`GPT_programme_*.md`), et une copie versionnée du skill
