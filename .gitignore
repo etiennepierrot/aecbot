@@ -4,5 +4,5 @@ __pycache__/
 .venv/
 venv/
 
-# PDFs sources bruts : publics, régénérables via `python3 download_pdfs.py`
-corpus_aecbot/pdfs/
+# PDFs sources bruts : publics, régénérables via `python3 pipeline/download_pdfs.py`
+data/pdfs/

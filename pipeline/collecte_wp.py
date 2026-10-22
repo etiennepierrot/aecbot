@@ -18,7 +18,8 @@ from markdownify import markdownify as md
 
 BASE = 'https://melenchon2027.fr'
 API = BASE + '/wp-json/wp/v2'
-OUT = Path('corpus_aecbot')
+OUT = Path('data')
+ARTIFACTS = Path('artifacts')
 # Garder uniquement les URL appartenant au programme ; adapter au besoin.
 PROGRAMME_PREFIX = '/programme/'
 SESSION = requests.Session()
@@ -122,8 +123,9 @@ def main():
         groups.append(current)
     if len(groups) > 20:
         print('ATTENTION: plus de 20 groupes; ajuster le regroupement avant import dans un Custom GPT.')
+    ARTIFACTS.mkdir(exist_ok=True)
     for n, docs in enumerate(groups, 1):
-        (OUT / f'GPT_programme_{n:02d}.md').write_text('\n\n\n---\n\n\n'.join(docs), encoding='utf-8')
+        (ARTIFACTS / f'GPT_programme_{n:02d}.md').write_text('\n\n\n---\n\n\n'.join(docs), encoding='utf-8')
     print(f'\nTerminé : {len(kept)} documents inclus, {len(excluded)} exclus, {len(groups)} fichiers GPT.')
     print(f'Voir {OUT}/index.csv et {OUT}/inventaire_complet.json pour vérifier la couverture.')
     print('IMPORTANT: la collecte des pages/posts ne garantit pas que tous les livrets PDF et mesures existent dans cette API.')

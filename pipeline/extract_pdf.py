@@ -4,7 +4,7 @@ from pathlib import Path
 
 import fitz
 
-ROOT = Path("corpus_aecbot")
+ROOT = Path("data")
 MANIFEST = ROOT / "pdf_manifest.json"
 OUTPUT = ROOT / "pdf_markdown"
 

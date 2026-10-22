@@ -4,7 +4,7 @@ from pathlib import Path
 import fitz
 
 docs = json.loads(
-    Path("corpus_aecbot/extraction_manifest.json").read_text(
+    Path("data/extraction_manifest.json").read_text(
         encoding="utf-8"
     )
 )

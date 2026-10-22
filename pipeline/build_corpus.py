@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build AECBot Custom GPT knowledge files from corpus_aecbot/extraction_manifest.json.
+"""Build AECBot Custom GPT knowledge files from data/extraction_manifest.json.
 Python 3.9+, standard library only. Does not modify original documents.
 """
 import argparse
@@ -51,17 +51,19 @@ def norm(text):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--root', default='corpus_aecbot')
+    parser.add_argument('--data-root', default='data', help='Where extraction_manifest.json and the extracted markdown live')
+    parser.add_argument('--out-root', default='artifacts', help='Where gpt/ and gpt_manifest.json are written')
     parser.add_argument('--max-kib', type=int, default=450, help='Maximum UTF-8 file size per knowledge file')
     parser.add_argument('--include-archives', action='store_true', help='Include NFP historical document')
     parser.add_argument('--include-other', action='store_true', help='Include press and unclassified documents')
     args = parser.parse_args()
-    root = Path(args.root)
+    root = Path(args.data_root)
+    out_root = Path(args.out_root)
     manifest_path = root / 'extraction_manifest.json'
     if not manifest_path.is_file():
         parser.error('Missing ' + str(manifest_path))
     docs = json.loads(manifest_path.read_text(encoding='utf-8'))
-    out = root / 'gpt'
+    out = out_root / 'gpt'
     out.mkdir(parents=True, exist_ok=True)
     # Clear only files this script previously generated.
     for path in out.glob('AEC_*.md'):
@@ -156,7 +158,7 @@ def main():
 
     for r in records:
         r.pop('_body', None)
-    (root / 'gpt_manifest.json').write_text(json.dumps({'documents': records, 'knowledge_files': files}, ensure_ascii=False, indent=2), encoding='utf-8')
+    (out_root / 'gpt_manifest.json').write_text(json.dumps({'documents': records, 'knowledge_files': files}, ensure_ascii=False, indent=2), encoding='utf-8')
     readme = '''# AECBot — règles documentaires\n\n- Le programme général est une référence **provisoire** : vérifier l'édition et l'éventuelle publication d'une version plus récente.\n- Distinguer programme général, livrets, plans, publications 2026 et archives.\n- La date `modified` est la date WordPress, **pas** une preuve de date de rédaction ni d'adoption.\n- Citer le titre, l'URL source et la page PDF (repère `## Page N`).\n- Ne jamais inventer une mesure ou une citation. Signaler les contradictions entre éditions.\n- Les archives du NFP sont exclues par défaut : utiliser `--include-archives` pour les ajouter.\n- Les dossiers de presse et documents non classés sont exclus par défaut.\n- La classification par nom de fichier est indicative : réviser `gpt_manifest.json` avant diffusion.\n'''
     (out / 'AEC_00_LIRE_AVANT_IMPORT.md').write_text(readme, encoding='utf-8')
     print(f"Documents source : {len(records)} | inclus : {len(selected)} | exclus : {len(records)-len(selected)}")
@@ -165,7 +167,7 @@ def main():
         print(f"  {f['file']} : {f['bytes']/1024:.1f} Kio")
     if len(files) + 1 > 20:
         print('ATTENTION : plus de 20 fichiers. Augmenter --max-kib ou sélectionner un sous-ensemble.')
-    print('Manifeste :', root / 'gpt_manifest.json')
+    print('Manifeste :', out_root / 'gpt_manifest.json')
     print('Vérifier les catégories et les exclusions avant import.')
 
 if __name__ == '__main__':

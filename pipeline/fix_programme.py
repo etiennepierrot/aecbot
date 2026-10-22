@@ -3,7 +3,7 @@ from pathlib import Path
 
 import fitz
 
-ROOT = Path("corpus_aecbot")
+ROOT = Path("data")
 
 docs = json.loads(
     (ROOT / "extraction_manifest.json").read_text(encoding="utf-8")

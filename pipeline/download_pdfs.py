@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 BASE = "https://melenchon2027.fr/wp-json/wp/v2/media"
-OUTPUT = Path("corpus_aecbot/pdfs")
+OUTPUT = Path("data/pdfs")
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
 manifest = []
