@@ -15,12 +15,12 @@ The repo has three clearly separated top-level concerns:
 - **`data/`** — raw and intermediate data the pipeline produces (WP scrape, downloaded PDFs,
   per-PDF text extraction, manifests). Treat as **data, not code**.
 - **`artifacts/`** — final, consumable deliverables built from `data/`: the Custom GPT knowledge
-  files (`gpt/`), the simpler direct-WP-only GPT import (`GPT_programme_*.md`), and a versioned
+  files (`gpt/`), the simpler direct-WP-only GPT import (`gpt_wp_only_*.md`), and a versioned
   copy of the Claude skill package (`skills/avenir-en-commun/`) that bundles this corpus.
 
 **Never hand-edit a generated file** — anything under `data/` (`markdown/*`, `pdf_markdown/*`,
 `index.csv`, `inventaire_complet.json`, `pdf_manifest.json`, `extraction_manifest.json`) or the
-generated parts of `artifacts/` (`gpt/AEC_*.md`, `gpt_manifest.json`, `GPT_programme_*.md`,
+generated parts of `artifacts/` (`gpt/AEC_*.md`, `gpt_manifest.json`, `gpt_wp_only_*.md`,
 `skills/avenir-en-commun/references/*`). Re-run the producing script instead, so the manifests
 stay consistent with the files they describe.
 
@@ -34,7 +34,7 @@ python3 -m pip install -r pipeline/requirements.txt   # requests, beautifulsoup4
 
 python3 pipeline/collecte_wp.py      # 1. scrape WP pages+posts under /programme/ -> data/markdown/,
                                       #    data/index.csv, data/inventaire_complet.json,
-                                      #    artifacts/GPT_programme_0X.md
+                                      #    artifacts/gpt_wp_only_0X.md
 python3 pipeline/download_pdfs.py    # 2. download every PDF media attachment -> data/pdfs/, data/pdf_manifest.json
 python3 pipeline/extract_pdf.py      # 3. extract PDF text per page (PyMuPDF) -> data/pdf_markdown/, data/extraction_manifest.json
 python3 pipeline/build_corpus.py     # 4. classify + dedupe + chunk extracted docs -> artifacts/gpt/AEC_*.md, artifacts/gpt_manifest.json
@@ -65,7 +65,7 @@ media/post `id`:
 1. **`collecte_wp.py`** calls the WP REST API (`/wp-json/wp/v2/pages`, `/posts`), keeps only items
    whose URL starts with `/programme/` and whose rendered text is >100 chars, converts HTML→Markdown,
    and writes one file per doc to `data/markdown/`. Also repackages everything kept into
-   `artifacts/GPT_programme_01.md`/`02.md` (≤300k chars/file) for *direct* Custom GPT import — this
+   `artifacts/gpt_wp_only_01.md`/`02.md` (≤300k chars/file) for *direct* Custom GPT import — this
    is a separate, simpler artifact from the `artifacts/gpt/AEC_*.md` files produced later in step 4.
 2. **`download_pdfs.py`** pulls every `application/pdf` media item from `/wp-json/wp/v2/media`,
    prefixes each filename with its WP id to avoid collisions, and records `data/pdf_manifest.json`.

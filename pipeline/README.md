@@ -31,7 +31,7 @@ python3 pipeline/collecte_wp.py
 ```
 
 Écrit : `data/markdown/` (1 fichier par page), `data/index.csv` (pages incluses/exclues),
-`data/inventaire_complet.json` (réponse API brute, y compris exclu), `artifacts/GPT_programme_0X.md`
+`data/inventaire_complet.json` (réponse API brute, y compris exclu), `artifacts/gpt_wp_only_0X.md`
 (regroupement direct pour import Custom GPT, ≤300k caractères/fichier).
 
 ### 2. `download_pdfs.py`

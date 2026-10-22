@@ -10,7 +10,7 @@ Trois dossiers racine, séparés par rôle (voir [CLAUDE.md](CLAUDE.md) pour le 
   script et instructions d'usage dans [pipeline/README.md](pipeline/README.md)).
 - **`data/`** — les données brutes et intermédiaires produites par le pipeline.
 - **`artifacts/`** — les livrables finaux construits à partir de `data/` : le corpus pour Custom
-  GPT (`gpt/`), l'import GPT direct (`GPT_programme_*.md`), et une copie versionnée du skill
+  GPT (`gpt/`), l'import GPT direct (`gpt_wp_only_*.md`), et une copie versionnée du skill
   Claude (`skills/avenir-en-commun/`).
 
 Ne jamais éditer un fichier généré (dans `data/` ou dans les parties générées d'`artifacts/`) à la
@@ -23,7 +23,7 @@ Quatre étapes indépendantes, à lancer dans l'ordre depuis la racine du repo :
 ```bash
 python3 -m pip install -r pipeline/requirements.txt   # requests, beautifulsoup4, markdownify (+ fitz/PyMuPDF, non pinné)
 
-python3 pipeline/collecte_wp.py      # 1. scrape pages+articles WP /programme/   -> data/markdown/, data/index.csv, data/inventaire_complet.json, artifacts/GPT_programme_0X.md
+python3 pipeline/collecte_wp.py      # 1. scrape pages+articles WP /programme/   -> data/markdown/, data/index.csv, data/inventaire_complet.json, artifacts/gpt_wp_only_0X.md
 python3 pipeline/download_pdfs.py    # 2. télécharge tous les PDF en pièce jointe -> data/pdfs/, data/pdf_manifest.json
 python3 pipeline/extract_pdf.py      # 3. extrait le texte des PDF page par page -> data/pdf_markdown/, data/extraction_manifest.json
 python3 pipeline/build_corpus.py     # 4. classe + déduplique + découpe            -> artifacts/gpt/AEC_*.md, artifacts/gpt_manifest.json
@@ -69,8 +69,8 @@ aecbot/
     ├── gpt_manifest.json         provenance complète par document : inclus ou non, raison si
     │                             exclu, fichier(s) de destination — à consulter avant de se fier
     │                             à la classification par nom de fichier
-    ├── GPT_programme_01.md       pages WP seules, regroupées pour import GPT direct (280 Ko)
-    ├── GPT_programme_02.md       suite du précédent si > 300k caractères (220 Ko)
+    ├── gpt_wp_only_01.md         pages WP seules, regroupées pour import GPT direct (280 Ko)
+    ├── gpt_wp_only_02.md         suite du précédent si > 300k caractères (220 Ko)
     ├── gpt/                      corpus complet, prêt à importer dans un Custom GPT (10 fichiers,
     │                             3,4 Mo) : AEC_00_LIRE_AVANT_IMPORT.md (règles de lecture, à lire
     │                             en premier) + AEC_{01_programme,02_livrets,03_plans,
