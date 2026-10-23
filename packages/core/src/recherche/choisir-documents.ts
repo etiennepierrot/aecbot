@@ -2,12 +2,7 @@ import { z } from "zod";
 import { estRenvoyable, type EtatDiffusion, type Resume, type Validite } from "../diffusion";
 import { sansAccents } from "../texte";
 import type { ModeleIA } from "./modele-ia";
-import {
-  INSTRUCTIONS_CLASSER,
-  INSTRUCTIONS_COMPRENDRE,
-  entreeClasser,
-  entreeComprendre,
-} from "./prompts";
+import { INSTRUCTIONS_CHOISIR, contexteCatalogue, entreeQuestion } from "./prompts";
 
 export interface Candidat extends EtatDiffusion {
   id: string;
@@ -15,6 +10,7 @@ export interface Candidat extends EtatDiffusion {
   url: string;
   validite: Validite;
   themes: string[];
+  tags: string[];
   resume?: Resume;
 }
 
@@ -25,14 +21,15 @@ export interface CriteresRecherche {
 }
 
 export interface Catalogue {
-  /** Candidats classés du plus au moins pertinent. */
+  /** Tous les documents diffusables, toujours dans le même ordre (le catalogue sert de préfixe mis en cache). */
+  lister(): Promise<Candidat[]>;
+  /** Recherche sans IA, utilisée en repli. Candidats classés du plus au moins pertinent. */
   rechercher(criteres: CriteresRecherche): Promise<Candidat[]>;
 }
 
 export interface DependancesRecherche {
   ia: ModeleIA;
   catalogue: Catalogue;
-  themes: readonly string[];
 }
 
 export interface ResultatRecherche {
@@ -40,20 +37,21 @@ export interface ResultatRecherche {
   mode: "ia" | "repli";
 }
 
-export const NB_CANDIDATS = 25;
 export const NB_MAX_RESULTATS = 5;
 export const LONGUEUR_MAX_QUESTION = 500;
-const LONGUEUR_MAX_RESUME_IA = 600;
+const LONGUEUR_MAX_RESUME_IA = 200;
 
-const schemaComprehension = z.object({
-  themes: z.array(z.string()).max(3),
-  motsCles: z.array(z.string().min(1)).min(1).max(8),
-});
-
-const schemaClassement = z.object({
+const schemaChoix = z.object({
   ids: z.array(z.string()).max(10),
 });
 
+const diffusable = (c: Candidat) => estRenvoyable(c) && c.validite === "en_vigueur";
+
+/**
+ * Un seul appel à l'IA par question : elle reçoit le catalogue de tous les documents diffusables et
+ * ne renvoie que des identifiants, filtrés ensuite contre ce catalogue. Sans IA, repli sur une
+ * recherche par les mots de la question.
+ */
 export async function choisirDocuments(
   question: string,
   deps: DependancesRecherche,
@@ -61,58 +59,43 @@ export async function choisirDocuments(
   const q = question.trim().slice(0, LONGUEUR_MAX_QUESTION);
   if (!q) return { documents: [], mode: "ia" };
 
-  let mode: ResultatRecherche["mode"] = "ia";
-  let criteres: Omit<CriteresRecherche, "limite">;
-  try {
-    criteres = await comprendre(q, deps);
-  } catch {
-    mode = "repli";
-    criteres = { motsCles: motsDeLaQuestion(q), themes: [] };
-  }
-
-  const candidats = (await deps.catalogue.rechercher({ ...criteres, limite: NB_CANDIDATS })).filter(
-    (c) => estRenvoyable(c) && c.validite === "en_vigueur",
-  );
-  if (candidats.length === 0) return { documents: [], mode };
+  const catalogue = (await deps.catalogue.lister()).filter(diffusable);
+  if (catalogue.length === 0) return { documents: [], mode: "ia" };
 
   try {
-    const ids = await classer(q, candidats, deps.ia);
-    return { documents: retenir(ids, candidats), mode };
+    const ids = await choisir(q, catalogue, deps.ia);
+    return { documents: retenir(ids, catalogue), mode: "ia" };
   } catch {
-    return { documents: candidats.slice(0, NB_MAX_RESULTATS), mode: "repli" };
+    const trouves = await deps.catalogue.rechercher({
+      motsCles: motsDeLaQuestion(q),
+      themes: [],
+      limite: NB_MAX_RESULTATS,
+    });
+    return { documents: trouves.filter(diffusable).slice(0, NB_MAX_RESULTATS), mode: "repli" };
   }
 }
 
-async function comprendre(question: string, deps: DependancesRecherche) {
-  const brut = await deps.ia.genererObjet({
-    instructions: INSTRUCTIONS_COMPRENDRE,
-    entree: entreeComprendre(question, deps.themes),
-    schema: schemaComprehension,
-  });
-  const { themes, motsCles } = schemaComprehension.parse(brut);
-  return { themes: themes.filter((t) => deps.themes.includes(t)), motsCles };
-}
-
-async function classer(question: string, candidats: Candidat[], ia: ModeleIA): Promise<string[]> {
+async function choisir(question: string, catalogue: Candidat[], ia: ModeleIA): Promise<string[]> {
   const brut = await ia.genererObjet({
-    instructions: INSTRUCTIONS_CLASSER,
-    entree: entreeClasser(
-      question,
-      candidats.map((c) => ({
+    instructions: INSTRUCTIONS_CHOISIR,
+    contexte: contexteCatalogue(
+      catalogue.map((c) => ({
         id: c.id,
         titre: c.titre,
         themes: c.themes,
-        // Le résumé non validé sert à choisir, jamais à être affiché au militant.
+        tags: c.tags,
+        // Le résumé non validé sert à choisir, pas forcément à être affiché (voir `apercu`).
         resume: (c.resume?.texte ?? "").slice(0, LONGUEUR_MAX_RESUME_IA),
       })),
     ),
-    schema: schemaClassement,
+    entree: entreeQuestion(question),
+    schema: schemaChoix,
   });
-  return schemaClassement.parse(brut).ids;
+  return schemaChoix.parse(brut).ids;
 }
 
-function retenir(ids: string[], candidats: Candidat[]): Candidat[] {
-  const parId = new Map(candidats.map((c) => [c.id, c]));
+function retenir(ids: string[], catalogue: Candidat[]): Candidat[] {
+  const parId = new Map(catalogue.map((c) => [c.id, c]));
   const retenus = new Set<Candidat>();
   for (const id of ids) {
     const candidat = parId.get(id);

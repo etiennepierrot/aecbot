@@ -49,6 +49,10 @@ export class CatalogueMarkdown implements Catalogue {
     return this.documents.size;
   }
 
+  async lister(): Promise<Candidat[]> {
+    return [...this.documents.values()].map(versCandidat);
+  }
+
   async rechercher({ motsCles, themes, limite }: CriteresRecherche): Promise<Candidat[]> {
     const trouves = motsCles.length > 0 ? this.index.search(motsCles.join(" ")) : [];
     const classes = trouves
@@ -82,6 +86,7 @@ function versCandidat(doc: DocumentCorpus): Candidat {
     confianceSource: doc.confianceSource,
     validite: doc.validite,
     themes: doc.themes,
+    tags: doc.tags,
     resume: doc.resume ? { texte: doc.resume, valideParHumain: doc.verrouilles.includes("resume") } : undefined,
   };
 }

@@ -2,6 +2,8 @@ import type { z } from "zod";
 
 export interface RequeteObjet {
   instructions: string;
+  /** Partie stable d'une requête à l'autre : un adaptateur la place en tête pour profiter du cache du fournisseur. */
+  contexte?: string;
   entree: string;
   schema: z.ZodType;
 }

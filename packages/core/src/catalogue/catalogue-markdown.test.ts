@@ -68,6 +68,20 @@ describe("CatalogueMarkdown", () => {
     expect(resultats.map((c) => c.id)).toEqual(["dans-theme", "hors-theme", "theme-seul"]);
   });
 
+  it("liste tous les documents diffusables, toujours dans le même ordre", async () => {
+    const catalogue = new CatalogueMarkdown([
+      doc("b", { tags: ["logement"] }),
+      doc("archive", { validite: "archive" }),
+      doc("a"),
+    ]);
+
+    const liste = await catalogue.lister();
+
+    expect(liste.map((c) => c.id)).toEqual(["b", "a"]);
+    expect(liste[0]?.tags).toEqual(["logement"]);
+    expect((await catalogue.lister()).map((c) => c.id)).toEqual(["b", "a"]);
+  });
+
   it("respecte la limite", async () => {
     const catalogue = new CatalogueMarkdown(["a", "b", "c"].map((id) => doc(id, { resume: "retraite" })));
 

@@ -40,7 +40,7 @@ Trois garde-fous :
 | **Un seul modèle de document** | Documents collectés et documents générés vivent dans la même base. « Corpus qualifié » et « corpus publiable » sont des filtres, pas deux systèmes. |
 | **L'humain a le dernier mot** | Chaque champ sait qui l'a rempli (IA ou humain). Une correction humaine est verrouillée : l'IA ne l'écrase jamais, même en relançant la qualification. |
 | **La confiance vient de la source** | Une source `officielle` (WordPress LFI) peut être diffusée après qualification par l'IA seule. Les autres sources exigent une vérification humaine. |
-| **L'IA d'AECBot choisit, elle ne rédige pas** | La qualification et la génération par IA se font hors de l'outil, avec un assistant IA personnel : AECBot exporte la matière (documents à qualifier, corpus vérifié) et importe le résultat (étiquettes proposées, documents générés), qui passe ensuite par la validation humaine. Le **seul** appel IA côté serveur est la recherche du bot : le modèle reçoit la question et des documents candidats, et ne renvoie que des identifiants. Le message envoyé au militant est composé uniquement de champs stockés, jamais de texte écrit par l'IA à la volée. |
+| **L'IA d'AECBot choisit, elle ne rédige pas** | La qualification et la génération par IA se font hors de l'outil, avec un assistant IA personnel : AECBot exporte la matière (documents à qualifier, corpus vérifié) et importe le résultat (étiquettes proposées, documents générés), qui passe ensuite par la validation humaine. Le **seul** appel IA côté serveur est la recherche du bot : le modèle reçoit la question et le catalogue des documents diffusables, et ne renvoie que des identifiants. Le message envoyé au militant est composé uniquement de champs stockés, jamais de texte écrit par l'IA à la volée. |
 | **Agnostique du fournisseur d'IA** | Aucun fournisseur ni modèle n'est imposé. Côté serveur, l'appel IA passe par une interface de `packages/core`, avec un fournisseur choisi par configuration. Hors outil, les formats d'export et d'import sont ouverts (Markdown, JSON) et utilisables avec n'importe quel assistant IA. |
 | **Traçabilité** | Tout document généré liste les documents sources sur lesquels il s'appuie. Toute réponse du bot cite sa source. |
 | **Au plus simple** | Un serveur, des fichiers Markdown versionnés dans git en phase 1, puis un fichier SQLite. Pas de Redis, pas de file de messages, pas de base vectorielle tant que ce n'est pas nécessaire. |
@@ -170,7 +170,7 @@ jamais ce filtre. Le code fait référence ; ce tableau en donne la lecture.
 | `packages/core` | Modèle de données (schéma Drizzle), règle `estRenvoyable`, règle de verrouillage des champs, accès DB. Importé par les trois apps. |
 | `apps/worker` | Exécute les jobs : collecte WordPress, extraction de texte (PDF), indexation pour la recherche. Tourne en continu et dépile la table `Job`. N'appelle aucune IA. |
 | `apps/backoffice` | UI web de l'équipe : export des documents à qualifier et du corpus vérifié, import des étiquettes proposées et des documents générés, édition et verrouillage des champs et tags, relecture et validation des documents générés, gestion des sources. Login via « Login with Telegram ». |
-| `apps/bot` | Bot Telegram. Militants : question → présélection en base → choix par l'IA → documents renvoyables, avec source et avertissement « initiative non officielle ». Seul composant qui appelle une IA. Équipe (identifiée par `telegram_id`) : envoi d'un PDF ou d'un lien → document `reçu` + job d'extraction. |
+| `apps/bot` | Bot Telegram. Militants : question → choix par l'IA dans le catalogue → documents renvoyables, avec source et avertissement « initiative non officielle ». Seul composant qui appelle une IA. Équipe (identifiée par `telegram_id`) : envoi d'un PDF ou d'un lien → document `reçu` + job d'extraction. |
 
 ## Flux principaux
 
@@ -208,21 +208,27 @@ Comme pour la qualification, AECBot ne fait aucun appel IA et ne paie pas cette 
 
 **Question d'un militant** (seul usage de l'IA côté serveur), implémenté par `choisirDocuments`
 ([`packages/core/src/recherche/`](../packages/core/src/recherche/)) :
-1. **Comprendre** : l'IA reçoit la question et la liste fermée des thèmes. Elle renvoie, en sortie
-   structurée, des thèmes et des mots-clés, ce qui couvre les questions formulées avec d'autres mots
-   que ceux des documents.
-2. **Présélectionner** (sans IA) : recherche de ces mots-clés dans les titres, résumés, thèmes et
-   tags (index MiniSearch en mémoire en phase 1, FTS5 avec SQLite ensuite), plus les
-   documents des thèmes, filtrés par `estRenvoyable` et `validité = en_vigueur` → 20 à 30
-   candidats, avec titre et résumé.
-3. **Choisir** : l'IA classe les candidats et renvoie 3 à 5 `id`. Tout `id` absent de la liste des
-   candidats est ignoré, ce qui rend le filtre de diffusion impossible à contourner.
-4. **Répondre** (sans IA) : le bot compose le message à partir des champs stockés uniquement
+1. **Choisir** (un seul appel IA) : l'IA reçoit le catalogue de **tous** les documents diffusables
+   et en vigueur (titre, thèmes, tags, résumé tronqué à 200 caractères), puis la question. Elle
+   renvoie de 0 à 5 `id`. Tout `id` absent du catalogue est ignoré, ce qui rend le filtre de
+   diffusion impossible à contourner. Le catalogue est envoyé en premier et toujours dans le même
+   ordre (`contexte` de la requête) : un fournisseur qui le met en cache le facture moins cher
+   d'une question à l'autre.
+2. **Répondre** (sans IA) : le bot compose le message à partir des champs stockés uniquement
    (titre, lien, et résumé selon la règle `apercu`) et ajoute l'avertissement « initiative non
    officielle ».
 
-Si l'API d'IA est indisponible, le bot se rabat sur la recherche plein texte seule (étape 2 sur la
-question brute). La question est transmise au fournisseur d'IA **sans** identifiant Telegram.
+Si l'API d'IA est indisponible ou répond mal, le bot se rabat sur une recherche sans IA (index
+MiniSearch en mémoire en phase 1, FTS5 avec SQLite ensuite) avec les mots de la question. La
+question est transmise au fournisseur d'IA **sans** identifiant Telegram.
+
+Pourquoi un seul appel plutôt que « comprendre la question → présélectionner → choisir » : sur
+11 questions types et le corpus actuel (60 documents), le choix direct dans le catalogue donne des
+résultats au moins aussi bons, en deux fois moins de temps et pour un coût par question plus
+faible. Une présélection plus stricte, testée elle aussi, ratait des documents pertinents (aucun
+résultat pour « la retraite à 60 ans »). Limite connue : la taille de la requête grandit avec le
+corpus. Au-delà de quelques centaines de documents, il faudra réintroduire une présélection,
+plutôt par recherche sémantique (embeddings).
 
 Il n'y a pas de RAG (une réponse rédigée par l'IA à partir des documents) : ce serait du texte IA
 non relu envoyé au militant, ce que la règle de diffusion interdit.
@@ -238,13 +244,14 @@ non relu envoyé au militant, ce que la règle de diffusion interdit.
 | Bot Telegram | grammY | |
 | Back-office | à trancher en phase 2 (proposition : React + Vite, API Hono) | Login with Telegram. |
 | Extraction PDF | `mupdf` (bindings officiels WASM/JS de MuPDF) | Même moteur que PyMuPDF aujourd'hui. Licence **AGPL**, comme PyMuPDF. |
-| IA côté serveur | fournisseur à choisir, petit modèle rapide avec sorties structurées (JSON) | Uniquement pour la recherche du bot : comprendre la question, choisir parmi les candidats. Derrière une interface de `packages/core`, avec un fournisseur configurable. |
+| IA côté serveur | [OpenRouter](https://openrouter.ai), passerelle vers de nombreux fournisseurs ; petit modèle rapide avec sorties structurées (JSON), choisi par configuration | Uniquement pour la recherche du bot : choisir dans le catalogue, un appel par question. Adaptateur `creerModeleOpenRouter` ([`packages/core/src/ia/openrouter.ts`](../packages/core/src/ia/openrouter.ts)) derrière l'interface `ModeleIA` : changer de modèle = changer un identifiant, changer de passerelle = écrire un autre adaptateur. Configuration : `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`. La question et le catalogue transitent par OpenRouter puis par le fournisseur du modèle (aucune donnée personnelle). |
 | IA hors outil | assistant IA personnel, au choix | Qualification et génération. AECBot fournit les prompts et définit les formats d'export et d'import (schémas dans `packages/core`). |
 | Hébergement | un petit VPS, Docker Compose, Caddy (HTTPS) | On part de zéro. |
 
 **Volume attendu** pour la première cible : environ 100 militants × 20 questions/semaine, soit
-~2 000 questions/semaine (~300/jour), soit environ 600 petits appels IA par jour (deux par
-question, sur un petit modèle). Le coût est à mesurer sur des requêtes réelles dès la phase 1.
+~2 000 questions/semaine (~300/jour), soit environ 300 appels IA par jour sur un petit modèle.
+Mesure faite en octobre 2026 (60 documents, petit modèle via un CLI, cache actif) : de l'ordre de
+0,15 centime de dollar par question. À remesurer avec le fournisseur retenu et le corpus complet.
 
 ## Organisation du repo
 
@@ -271,7 +278,7 @@ l'export du corpus vérifié produit depuis la base (phase 3), qui alimente la g
    l'extraction PDF, import du corpus actuel (la classification heuristique de `build_corpus.py`
    sert de qualification initiale, les PDF en double sont écartés, et une première qualification
    produit les résumés), bot
-   avec présélection plein texte et choix par l'IA. *À la fin de cette
+   avec choix par l'IA dans le catalogue. *À la fin de cette
    phase, les militants ont déjà un outil utile.*
 2. **Qualification** : passage du corpus Markdown à SQLite, export des documents à qualifier,
    prompt de qualification, import des étiquettes proposées, back-office (correction, verrouillage, gestion des sources), login
@@ -279,8 +286,9 @@ l'export du corpus vérifié produit depuis la base (phase 3), qui alimente la g
 3. **Documents générés** : export du corpus vérifié pour l'assistant IA, dépôt des fiches,
    argumentaires et réponses aux objections rédigés hors outil, relecture et validation dans le
    back-office.
-4. **Recherche sémantique** (optionnel) : si la présélection plein texte rate trop de documents
-   pertinents, ajouter des embeddings (`sqlite-vec`) pour la présélection.
+4. **Présélection sémantique** (optionnel) : quand le catalogue devient trop gros pour être envoyé
+   en entier à chaque question, présélectionner par embeddings (`sqlite-vec`) avant le choix par
+   l'IA.
 
 ## Hors périmètre pour l'instant
 
@@ -304,5 +312,5 @@ l'export du corpus vérifié produit depuis la base (phase 3), qui alimente la g
 - **Sources d'un document déposé** : citer les `id` AECBot dans le texte généré (contrainte à
   ajouter au prompt de génération), ou les saisir à la main au dépôt ? La première option rend la `Filiation`
   automatique.
-- **Coût de la recherche IA** : à chiffrer en phase 1 avec les tarifs en vigueur et des requêtes
-  réelles. Deux appels par question, ou un seul (sauter l'étape « comprendre ») si la qualité suffit ?
+- **Coût et latence de la recherche IA** : à remesurer avec le fournisseur retenu, en appel direct
+  à son API (la mesure actuelle passe par un CLI, plus lent), et sur le corpus complet.

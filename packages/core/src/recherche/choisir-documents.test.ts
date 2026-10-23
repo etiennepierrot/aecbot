@@ -2,14 +2,12 @@ import { describe, expect, it, vi } from "vitest";
 import {
   choisirDocuments,
   motsDeLaQuestion,
-  NB_CANDIDATS,
+  NB_MAX_RESULTATS,
   type Candidat,
   type Catalogue,
   type CriteresRecherche,
 } from "./choisir-documents";
 import type { ModeleIA } from "./modele-ia";
-
-const THEMES = ["retraites", "écologie", "institutions"];
 
 function candidat(id: string, surcharge: Partial<Candidat> = {}): Candidat {
   return {
@@ -21,20 +19,22 @@ function candidat(id: string, surcharge: Partial<Candidat> = {}): Candidat {
     confianceSource: "officielle",
     validite: "en_vigueur",
     themes: [],
+    tags: [],
     resume: { texte: `résumé ${id}`, valideParHumain: false },
     ...surcharge,
   };
 }
 
-function fauxCatalogue(candidats: Candidat[]) {
-  const appels: CriteresRecherche[] = [];
+function fauxCatalogue(tous: Candidat[], trouves: Candidat[] = tous) {
+  const recherches: CriteresRecherche[] = [];
   const catalogue: Catalogue = {
+    lister: async () => tous,
     rechercher: async (criteres) => {
-      appels.push(criteres);
-      return candidats;
+      recherches.push(criteres);
+      return trouves;
     },
   };
-  return { catalogue, appels };
+  return { catalogue, recherches };
 }
 
 function fauxModele(...reponses: (unknown | Error)[]) {
@@ -46,141 +46,133 @@ function fauxModele(...reponses: (unknown | Error)[]) {
   return { genererObjet };
 }
 
-const COMPREHENSION = { themes: ["retraites"], motsCles: ["retraite", "60 ans"] };
+const requete = (ia: ReturnType<typeof fauxModele>, appel = 0) => ia.genererObjet.mock.calls[appel]?.[0];
 
 describe("choisirDocuments", () => {
-  it("renvoie les documents choisis par l'IA, dans son ordre", async () => {
-    const { catalogue, appels } = fauxCatalogue([candidat("a"), candidat("b"), candidat("c")]);
-    const ia = fauxModele(COMPREHENSION, { ids: ["c", "a"] });
+  it("renvoie les documents choisis par l'IA, dans son ordre, en un seul appel", async () => {
+    const { catalogue } = fauxCatalogue([candidat("a"), candidat("b"), candidat("c")]);
+    const ia = fauxModele({ ids: ["c", "a"] });
 
-    const resultat = await choisirDocuments("Retraite à 60 ans ?", { ia, catalogue, themes: THEMES });
+    const resultat = await choisirDocuments("Retraite à 60 ans ?", { ia, catalogue });
 
     expect(resultat.mode).toBe("ia");
     expect(resultat.documents.map((d) => d.id)).toEqual(["c", "a"]);
-    expect(appels).toEqual([{ themes: ["retraites"], motsCles: ["retraite", "60 ans"], limite: NB_CANDIDATS }]);
+    expect(ia.genererObjet).toHaveBeenCalledTimes(1);
   });
 
-  it("ignore les thèmes hors de la liste fermée", async () => {
-    const { catalogue, appels } = fauxCatalogue([candidat("a")]);
-    const ia = fauxModele({ themes: ["retraites", "inventé"], motsCles: ["x"] }, { ids: ["a"] });
+  it("met le catalogue dans le contexte stable et la question dans l'entrée", async () => {
+    const { catalogue } = fauxCatalogue([candidat("a", { tags: ["règle verte"] })]);
+    const ia = fauxModele({ ids: [] }, { ids: [] });
 
-    await choisirDocuments("question", { ia, catalogue, themes: THEMES });
+    await choisirDocuments("première question", { ia, catalogue });
+    await choisirDocuments("seconde question", { ia, catalogue });
 
-    expect(appels[0]?.themes).toEqual(["retraites"]);
+    expect(requete(ia, 0)?.contexte).toContain('"id":"a"');
+    expect(requete(ia, 0)?.contexte).toContain("règle verte");
+    expect(requete(ia, 0)?.contexte).not.toContain("question");
+    expect(requete(ia, 0)?.contexte).toBe(requete(ia, 1)?.contexte);
+    expect(requete(ia, 0)?.entree).toContain("première question");
   });
 
-  it("ignore les identifiants qui ne sont pas parmi les candidats, et les doublons", async () => {
+  it("ignore les identifiants absents du catalogue, et les doublons", async () => {
     const { catalogue } = fauxCatalogue([candidat("a"), candidat("b")]);
-    const ia = fauxModele(COMPREHENSION, { ids: ["inconnu", "b", "b", "a"] });
+    const ia = fauxModele({ ids: ["inconnu", "b", "b", "a"] });
 
-    const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
+    const resultat = await choisirDocuments("question", { ia, catalogue });
 
     expect(resultat.documents.map((d) => d.id)).toEqual(["b", "a"]);
   });
 
-  it("ne renvoie jamais un document non diffusable, même si le catalogue le propose", async () => {
+  it("ne montre ni ne renvoie jamais un document non diffusable, même si le catalogue le liste", async () => {
     const { catalogue } = fauxCatalogue([
       candidat("brouillon", { origine: "genere", statut: "brouillon" }),
       candidat("archive", { validite: "archive" }),
       candidat("non-verifie", { origine: "push", statut: "qualifie_ia", confianceSource: "non_verifiee" }),
       candidat("ok"),
     ]);
-    const ia = fauxModele(COMPREHENSION, { ids: ["brouillon", "archive", "non-verifie", "ok"] });
+    const ia = fauxModele({ ids: ["brouillon", "archive", "non-verifie", "ok"] });
 
-    const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
+    const resultat = await choisirDocuments("question", { ia, catalogue });
 
     expect(resultat.documents.map((d) => d.id)).toEqual(["ok"]);
-    const entreeClassement = ia.genererObjet.mock.calls[1]?.[0].entree ?? "";
-    expect(entreeClassement).not.toContain("brouillon");
-    expect(entreeClassement).not.toContain("non-verifie");
+    const contexte = requete(ia)?.contexte ?? "";
+    for (const id of ["brouillon", "archive", "non-verifie"]) expect(contexte).not.toContain(`"id":"${id}"`);
   });
 
-  it("renvoie au plus 5 documents", async () => {
+  it(`renvoie au plus ${NB_MAX_RESULTATS} documents`, async () => {
     const ids = ["a", "b", "c", "d", "e", "f", "g"];
     const { catalogue } = fauxCatalogue(ids.map((id) => candidat(id)));
-    const ia = fauxModele(COMPREHENSION, { ids });
+    const ia = fauxModele({ ids });
 
-    const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
+    const resultat = await choisirDocuments("question", { ia, catalogue });
 
-    expect(resultat.documents).toHaveLength(5);
+    expect(resultat.documents).toHaveLength(NB_MAX_RESULTATS);
   });
 
-  it("renvoie une liste vide si l'IA juge qu'aucun candidat ne répond", async () => {
+  it("renvoie une liste vide si l'IA juge qu'aucun document ne répond", async () => {
     const { catalogue } = fauxCatalogue([candidat("a")]);
-    const ia = fauxModele(COMPREHENSION, { ids: [] });
+    const ia = fauxModele({ ids: [] });
 
-    const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
-
-    expect(resultat).toEqual({ documents: [], mode: "ia" });
+    expect(await choisirDocuments("question", { ia, catalogue })).toEqual({ documents: [], mode: "ia" });
   });
 
-  it("n'appelle pas l'IA pour classer quand il n'y a aucun candidat", async () => {
-    const { catalogue } = fauxCatalogue([]);
-    const ia = fauxModele(COMPREHENSION);
-
-    const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
-
-    expect(resultat.documents).toEqual([]);
-    expect(ia.genererObjet).toHaveBeenCalledTimes(1);
-  });
-
-  it("ne fait rien pour une question vide", async () => {
-    const { catalogue, appels } = fauxCatalogue([candidat("a")]);
+  it("n'appelle pas l'IA quand aucun document n'est diffusable", async () => {
+    const { catalogue } = fauxCatalogue([candidat("a", { validite: "archive" })]);
     const ia = fauxModele();
 
-    const resultat = await choisirDocuments("   ", { ia, catalogue, themes: THEMES });
+    const resultat = await choisirDocuments("question", { ia, catalogue });
 
     expect(resultat.documents).toEqual([]);
     expect(ia.genererObjet).not.toHaveBeenCalled();
-    expect(appels).toEqual([]);
+  });
+
+  it("ne fait rien pour une question vide", async () => {
+    const { catalogue, recherches } = fauxCatalogue([candidat("a")]);
+    const ia = fauxModele();
+
+    const resultat = await choisirDocuments("   ", { ia, catalogue });
+
+    expect(resultat.documents).toEqual([]);
+    expect(ia.genererObjet).not.toHaveBeenCalled();
+    expect(recherches).toEqual([]);
   });
 
   it("tronque une question trop longue avant de l'envoyer à l'IA", async () => {
-    const { catalogue } = fauxCatalogue([]);
-    const ia = fauxModele(COMPREHENSION);
+    const { catalogue } = fauxCatalogue([candidat("a")]);
+    const ia = fauxModele({ ids: [] });
 
-    await choisirDocuments("x".repeat(2000), { ia, catalogue, themes: THEMES });
+    await choisirDocuments("x".repeat(2000), { ia, catalogue });
 
-    const entree = ia.genererObjet.mock.calls[0]?.[0].entree ?? "";
+    const entree = requete(ia)?.entree ?? "";
     expect(entree).toContain("x".repeat(500));
     expect(entree).not.toContain("x".repeat(501));
   });
 
-  describe("repli", () => {
-    it("cherche avec les mots de la question si l'étape « comprendre » échoue", async () => {
-      const { catalogue, appels } = fauxCatalogue([candidat("a")]);
-      const ia = fauxModele(new Error("API indisponible"), { ids: ["a"] });
+  describe("repli sans IA", () => {
+    it("cherche avec les mots de la question si l'IA échoue", async () => {
+      const { catalogue, recherches } = fauxCatalogue([candidat("a"), candidat("b")], [candidat("b")]);
+      const ia = fauxModele(new Error("API indisponible"));
 
-      const resultat = await choisirDocuments("Que propose le programme sur la retraite ?", {
-        ia,
-        catalogue,
-        themes: THEMES,
-      });
+      const resultat = await choisirDocuments("Que propose le programme sur la retraite ?", { ia, catalogue });
 
-      expect(resultat.mode).toBe("repli");
+      expect(resultat).toMatchObject({ mode: "repli", documents: [{ id: "b" }] });
+      expect(recherches).toEqual([{ motsCles: ["programme", "retraite"], themes: [], limite: NB_MAX_RESULTATS }]);
+    });
+
+    it("se replie aussi si la réponse de l'IA est mal formée", async () => {
+      const { catalogue } = fauxCatalogue([candidat("a")]);
+      const ia = fauxModele({ documents: ["a"] });
+
+      expect((await choisirDocuments("retraite", { ia, catalogue })).mode).toBe("repli");
+    });
+
+    it("ne renvoie pas de document non diffusable, même en repli", async () => {
+      const { catalogue } = fauxCatalogue([candidat("a")], [candidat("archive", { validite: "archive" }), candidat("a")]);
+      const ia = fauxModele(new Error("timeout"));
+
+      const resultat = await choisirDocuments("question", { ia, catalogue });
+
       expect(resultat.documents.map((d) => d.id)).toEqual(["a"]);
-      expect(appels[0]).toEqual({ motsCles: ["programme", "retraite"], themes: [], limite: NB_CANDIDATS });
-    });
-
-    it("cherche avec les mots de la question si la réponse de l'IA est mal formée", async () => {
-      const { catalogue, appels } = fauxCatalogue([candidat("a")]);
-      const ia = fauxModele({ motsCles: [] }, { ids: ["a"] });
-
-      const resultat = await choisirDocuments("retraite", { ia, catalogue, themes: THEMES });
-
-      expect(resultat.mode).toBe("repli");
-      expect(appels[0]?.motsCles).toEqual(["retraite"]);
-    });
-
-    it("garde l'ordre du catalogue si l'étape « choisir » échoue", async () => {
-      const ids = ["a", "b", "c", "d", "e", "f"];
-      const { catalogue } = fauxCatalogue(ids.map((id) => candidat(id)));
-      const ia = fauxModele(COMPREHENSION, new Error("timeout"));
-
-      const resultat = await choisirDocuments("question", { ia, catalogue, themes: THEMES });
-
-      expect(resultat.mode).toBe("repli");
-      expect(resultat.documents.map((d) => d.id)).toEqual(["a", "b", "c", "d", "e"]);
     });
   });
 });
