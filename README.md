@@ -16,6 +16,11 @@ Trois dossiers racine, séparés par rôle (voir [CLAUDE.md](CLAUDE.md) pour le 
 Ne jamais éditer un fichier généré (dans `data/` ou dans les parties générées d'`artifacts/`) à la
 main : toujours ré-exécuter le script producteur.
 
+**Où va le projet** : ce pipeline est la première brique d'une bibliothèque documentaire vérifiée
+(collecte, qualification IA + humaine, génération de fiches, bot Telegram pour les militants),
+à porter en TypeScript. Voir [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) et son
+[schéma d'ensemble](docs/vue-ensemble.svg).
+
 ## Pipeline
 
 Quatre étapes indépendantes, à lancer dans l'ordre depuis la racine du repo :

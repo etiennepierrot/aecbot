@@ -18,6 +18,13 @@ The repo has three clearly separated top-level concerns:
   files (`gpt/`), the simpler direct-WP-only GPT import (`gpt_wp_only_*.md`), and a versioned
   copy of the Claude skill package (`skills/avenir-en-commun/`) that bundles this corpus.
 
+**Target architecture**: `docs/ARCHITECTURE.md` (+ `docs/vue-ensemble.svg`, the non-technical
+overview) describes where the project is heading: a full-TypeScript monorepo (`packages/core`,
+`apps/worker`, `apps/backoffice`, `apps/bot`) on SQLite, with AI qualification overridable by
+humans, human-validated generated documents, and a Telegram bot. The Python `pipeline/` below is
+the current state and the reference for the port. Read that doc before starting work on any of
+those components.
+
 **Never hand-edit a generated file** — anything under `data/` (`markdown/*`, `pdf_markdown/*`,
 `index.csv`, `inventaire_complet.json`, `pdf_manifest.json`, `extraction_manifest.json`) or the
 generated parts of `artifacts/` (`gpt/AEC_*.md`, `gpt_manifest.json`, `gpt_wp_only_*.md`,
