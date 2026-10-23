@@ -96,16 +96,17 @@ d'origine.
 
 ### Règle de diffusion
 
-C'est la règle centrale du projet. Elle vit à un seul endroit (`packages/core`), et le bot ne
-contourne jamais ce filtre.
+C'est la règle centrale du projet. Elle vit à un seul endroit, la fonction `estRenvoyable` de
+[`packages/core/src/diffusion.ts`](../packages/core/src/diffusion.ts), et le bot ne contourne
+jamais ce filtre. Le code fait référence ; ce tableau en donne la lecture.
 
-```ts
-function estRenvoyable(doc: Document, source: Source): boolean {
-  if (doc.origine === "généré") return doc.statut === "validé";
-  if (doc.statut === "qualifié") return true;
-  return doc.statut === "qualifié_ia" && source.confiance === "officielle";
-}
-```
+| Document | Statut | Source officielle | Autre source |
+|---|---|---|---|
+| collecté | reçu (pas encore étiqueté) | non | non |
+| collecté | qualifié par l'IA, pas relu | **oui** | non |
+| collecté | qualifié (relu par un humain) | oui | oui |
+| généré | brouillon ou rejeté | non | non |
+| généré | validé par un humain | oui | oui |
 
 ## Composants
 
@@ -151,7 +152,8 @@ choisie ou `non_vérifiée` par défaut → même extraction, puis file « à qu
 
 Comme pour la qualification, AECBot ne fait aucun appel IA et ne paie pas cette partie.
 
-**Question d'un militant** (seul usage de l'IA côté serveur) :
+**Question d'un militant** (seul usage de l'IA côté serveur), implémenté par `choisirDocuments`
+([`packages/core/src/recherche/`](../packages/core/src/recherche/)) :
 1. **Comprendre** : l'IA reçoit la question et la liste fermée des thèmes. Elle renvoie, en sortie
    structurée, des thèmes et des mots-clés, ce qui couvre les questions formulées avec d'autres mots
    que ceux des documents.
@@ -174,7 +176,7 @@ non relu envoyé au militant, ce que la règle de diffusion interdit.
 
 | Besoin | Choix | Note |
 |---|---|---|
-| Langage / runtime | TypeScript, Node.js LTS, monorepo pnpm | |
+| Langage / runtime | TypeScript, Node.js LTS, monorepo en workspaces npm | Tests : Vitest. Validation des réponses de l'IA : zod. |
 | Base de données | SQLite via `better-sqlite3` + Drizzle ORM | FTS5 pour la recherche ; `sqlite-vec` si on ajoute la recherche sémantique. |
 | File de jobs | table `Job` dans SQLite | Suffisant à ce volume. |
 | Bot Telegram | grammY | |

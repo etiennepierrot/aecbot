@@ -64,8 +64,17 @@ specific document, after `extract_pdf.py`, before `build_corpus.py`.
   program, not an AEC edition)
 - `--include-other` — include press kits / unclassified docs (excluded by default)
 
-There is no lint/test command — correctness here means re-running the pipeline and checking the
-manifests (counts of included/excluded/error/duplicate) described below.
+The Python pipeline has no lint/test command — correctness there means re-running the pipeline and
+checking the manifests (counts of included/excluded/error/duplicate) described below.
+
+The TypeScript side (npm workspaces, currently only `packages/core`) has tests and a typecheck, run
+from the repo root:
+
+```bash
+npm install
+npm test             # vitest, all workspaces
+npm run typecheck    # tsc --noEmit, all workspaces
+```
 
 Before re-running the full pipeline (which re-downloads 265 MB of PDFs), check whether there's
 actually anything new: `python3 pipeline/check_updates.py` compares the live site to the committed
