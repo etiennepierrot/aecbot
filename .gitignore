@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+node_modules/
 
 # PDFs sources bruts : publics, régénérables via `python3 pipeline/download_pdfs.py`
 data/pdfs/

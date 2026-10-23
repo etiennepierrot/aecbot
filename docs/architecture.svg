@@ -71,7 +71,7 @@
   <text class="lbl" x="490" y="316">(login Telegram)</text>
   <text class="lbl" x="190" y="306">webhook</text>
   <text class="lbl" x="375" y="306" text-anchor="end">question,</text>
-  <text class="lbl" x="375" y="322" text-anchor="end">candidats → ids</text>
+  <text class="lbl" x="375" y="322" text-anchor="end">catalogue → ids</text>
   <text class="lbl" x="1082" y="306">collecte planifiée</text>
   <text class="lbl" x="650" y="284">↑ export : docs à qualifier, corpus vérifié</text>
   <text class="lbl" x="650" y="300">↓ import : étiquettes proposées, docs générés</text>
