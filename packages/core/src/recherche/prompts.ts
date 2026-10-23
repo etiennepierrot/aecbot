@@ -15,7 +15,7 @@ export function entreeComprendre(question: string, themes: readonly string[]): s
 
 export function entreeClasser(
   question: string,
-  candidats: readonly { id: string; titre: string; themes: string[]; description: string }[],
+  candidats: readonly { id: string; titre: string; themes: string[]; resume: string }[],
 ): string {
   const lignes = candidats.map((c) => JSON.stringify(c)).join("\n");
   return `Question :\n<<<\n${question}\n>>>\n\nCandidats (un objet JSON par ligne) :\n${lignes}`;

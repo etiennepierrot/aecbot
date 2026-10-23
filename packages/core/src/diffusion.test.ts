@@ -22,9 +22,17 @@ describe("estRenvoyable", () => {
 });
 
 describe("apercu", () => {
-  it("affiche le résumé seulement s'il est validé par un humain", () => {
-    expect(apercu({ extrait: "extrait", resume: { texte: "résumé", valideParHumain: true } })).toBe("résumé");
-    expect(apercu({ extrait: "extrait", resume: { texte: "résumé", valideParHumain: false } })).toBe("extrait");
-    expect(apercu({ extrait: "extrait" })).toBe("extrait");
+  it("affiche le résumé de l'IA pour un document écrit par des humains", () => {
+    expect(apercu({ origine: "wp", resume: { texte: "résumé", valideParHumain: false } })).toBe("résumé");
+    expect(apercu({ origine: "push", resume: { texte: "résumé", valideParHumain: false } })).toBe("résumé");
+  });
+
+  it("n'affiche le résumé d'un document généré que s'il a été relu", () => {
+    expect(apercu({ origine: "genere", resume: { texte: "résumé", valideParHumain: true } })).toBe("résumé");
+    expect(apercu({ origine: "genere", resume: { texte: "résumé", valideParHumain: false } })).toBeUndefined();
+  });
+
+  it("n'affiche rien sans résumé", () => {
+    expect(apercu({ origine: "wp" })).toBeUndefined();
   });
 });

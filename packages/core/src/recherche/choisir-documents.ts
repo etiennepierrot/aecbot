@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { estRenvoyable, type EtatDiffusion, type Resume, type Validite } from "../diffusion";
+import { sansAccents } from "../texte";
 import type { ModeleIA } from "./modele-ia";
 import {
   INSTRUCTIONS_CLASSER,
@@ -12,10 +13,8 @@ export interface Candidat extends EtatDiffusion {
   id: string;
   titre: string;
   url: string;
-  page?: number;
   validite: Validite;
   themes: string[];
-  extrait: string;
   resume?: Resume;
 }
 
@@ -44,7 +43,7 @@ export interface ResultatRecherche {
 export const NB_CANDIDATS = 25;
 export const NB_MAX_RESULTATS = 5;
 export const LONGUEUR_MAX_QUESTION = 500;
-const LONGUEUR_MAX_DESCRIPTION = 300;
+const LONGUEUR_MAX_RESUME_IA = 600;
 
 const schemaComprehension = z.object({
   themes: z.array(z.string()).max(3),
@@ -104,7 +103,7 @@ async function classer(question: string, candidats: Candidat[], ia: ModeleIA): P
         titre: c.titre,
         themes: c.themes,
         // Le résumé non validé sert à choisir, jamais à être affiché au militant.
-        description: (c.resume?.texte ?? c.extrait).slice(0, LONGUEUR_MAX_DESCRIPTION),
+        resume: (c.resume?.texte ?? "").slice(0, LONGUEUR_MAX_RESUME_IA),
       })),
     ),
     schema: schemaClassement,
@@ -131,10 +130,7 @@ const MOTS_VIDES = new Set([
 ]);
 
 export function motsDeLaQuestion(question: string): string[] {
-  const mots = question
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
+  const mots = sansAccents(question)
     .split(/[^\p{L}\p{N}]+/u)
     .filter((m) => m.length > 2 && !MOTS_VIDES.has(m));
   return [...new Set(mots)].slice(0, 8);

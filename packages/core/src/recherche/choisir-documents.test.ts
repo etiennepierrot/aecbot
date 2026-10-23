@@ -21,7 +21,7 @@ function candidat(id: string, surcharge: Partial<Candidat> = {}): Candidat {
     confianceSource: "officielle",
     validite: "en_vigueur",
     themes: [],
-    extrait: `extrait ${id}`,
+    resume: { texte: `résumé ${id}`, valideParHumain: false },
     ...surcharge,
   };
 }

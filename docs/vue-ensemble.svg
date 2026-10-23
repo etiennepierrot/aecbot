@@ -150,15 +150,15 @@
     <rect x="40" y="634" width="366" height="80" rx="12" fill="#f0fdf4" stroke="#86efac"/>
     <circle cx="74" cy="674" r="16" fill="#16a34a"/>
     <path class="ico" d="M66 674 l6 6 l10 -12" stroke="#ffffff"/>
-    <text class="g" x="102" y="668">Rien de ce qu'écrit l'IA n'arrive aux</text>
-    <text class="g" x="102" y="689">militants sans relecture humaine.</text>
+    <text class="g" x="102" y="668">Aucun document rédigé par l'IA n'arrive</text>
+    <text class="g" x="102" y="689">aux militants sans relecture humaine.</text>
   </g>
   <g>
     <rect x="427" y="634" width="366" height="80" rx="12" fill="#f0fdf4" stroke="#86efac"/>
     <circle cx="461" cy="674" r="16" fill="#16a34a"/>
     <path class="ico" d="M453 674 l6 6 l10 -12" stroke="#ffffff"/>
     <text class="g" x="489" y="668">Chaque réponse cite sa source :</text>
-    <text class="g" x="489" y="689">titre, lien et page du document.</text>
+    <text class="g" x="489" y="689">titre et lien du document.</text>
   </g>
   <g>
     <rect x="814" y="634" width="366" height="80" rx="12" fill="#f0fdf4" stroke="#86efac"/>

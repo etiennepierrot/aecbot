@@ -1,7 +1,12 @@
-export type Origine = "wp" | "push" | "genere";
-export type Statut = "recu" | "qualifie_ia" | "qualifie" | "brouillon" | "valide" | "rejete";
-export type Confiance = "officielle" | "verifiee" | "non_verifiee";
-export type Validite = "en_vigueur" | "remplace" | "archive";
+export const ORIGINES = ["wp", "push", "genere"] as const;
+export const STATUTS = ["recu", "qualifie_ia", "qualifie", "brouillon", "valide", "rejete"] as const;
+export const CONFIANCES = ["officielle", "verifiee", "non_verifiee"] as const;
+export const VALIDITES = ["en_vigueur", "remplace", "archive"] as const;
+
+export type Origine = (typeof ORIGINES)[number];
+export type Statut = (typeof STATUTS)[number];
+export type Confiance = (typeof CONFIANCES)[number];
+export type Validite = (typeof VALIDITES)[number];
 
 export interface EtatDiffusion {
   origine: Origine;
@@ -20,6 +25,11 @@ export interface Resume {
   valideParHumain: boolean;
 }
 
-export function apercu(doc: { resume?: Resume; extrait: string }): string {
-  return doc.resume?.valideParHumain ? doc.resume.texte : doc.extrait;
+/**
+ * Résumé que le bot peut afficher. Un document écrit par des humains peut montrer le résumé proposé
+ * par l'IA ; pour un document généré, le résumé doit avoir été relu.
+ */
+export function apercu(doc: { origine: Origine; resume?: Resume }): string | undefined {
+  if (!doc.resume) return undefined;
+  return doc.origine !== "genere" || doc.resume.valideParHumain ? doc.resume.texte : undefined;
 }
