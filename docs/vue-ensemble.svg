@@ -90,12 +90,12 @@
       <path d="M748 217 h12 M748 224 h12 M748 231 h7"/>
       <path d="M774 214 l-12 22 l-1 6 l5 -4 l12 -22 z"/>
     </g>
-    <text class="body" x="650" y="290">À partir des documents</text>
-    <text class="body" x="650" y="311">vérifiés, l'IA prépare des</text>
-    <text class="body" x="650" y="332">fiches thématiques, des</text>
-    <text class="body" x="650" y="353">argumentaires et des</text>
-    <text class="body" x="650" y="374">réponses aux objections,</text>
-    <text class="body" x="650" y="395">relus par l'équipe.</text>
+    <text class="body" x="650" y="290">Avec l'IA, hors de l'outil,</text>
+    <text class="body" x="650" y="311">l'équipe prépare des fiches,</text>
+    <text class="body" x="650" y="332">argumentaires et réponses</text>
+    <text class="body" x="650" y="353">aux objections à partir des</text>
+    <text class="body" x="650" y="374">documents vérifiés, puis les</text>
+    <text class="body" x="650" y="395">dépose pour relecture.</text>
     <rect x="650" y="418" width="84" height="22" rx="11" fill="#ede9fe"/>
     <text class="chip" x="692" y="433" text-anchor="middle" fill="#5b21b6">IA rédige</text>
     <rect x="742" y="418" width="112" height="22" rx="11" fill="#dcfce7"/>
@@ -115,9 +115,10 @@
     </g>
     <text class="body" x="945" y="290">Les militants posent leurs</text>
     <text class="body" x="945" y="311">questions au bot Telegram.</text>
-    <text class="body" x="945" y="340">Il renvoie les documents</text>
-    <text class="body" x="945" y="361">les plus utiles, toujours</text>
-    <text class="body" x="945" y="382">avec leur source.</text>
+    <text class="body" x="945" y="340">L'IA l'aide à choisir les</text>
+    <text class="body" x="945" y="361">documents les plus utiles,</text>
+    <text class="body" x="945" y="382">envoyés tels quels, avec</text>
+    <text class="body" x="945" y="403">leur source.</text>
     <rect x="945" y="418" width="84" height="22" rx="11" fill="#dbeafe"/>
     <text class="chip" x="987" y="433" text-anchor="middle" fill="#1e40af">Militants</text>
   </g>

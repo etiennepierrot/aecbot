@@ -17,7 +17,8 @@ Ne jamais éditer un fichier généré (dans `data/` ou dans les parties génér
 main : toujours ré-exécuter le script producteur.
 
 **Où va le projet** : ce pipeline est la première brique d'une bibliothèque documentaire vérifiée
-(collecte, qualification IA + humaine, génération de fiches, bot Telegram pour les militants),
+(collecte, qualification IA + humaine, validation de fiches rédigées avec l'IA, bot Telegram
+pour les militants),
 à porter en TypeScript. Voir [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) et son
 [schéma d'ensemble](docs/vue-ensemble.svg).
 

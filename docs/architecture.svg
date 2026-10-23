@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 830" width="1240" height="830" role="img" aria-labelledby="t d">
+  <title id="t">Architecture technique</title>
+  <desc id="d">Militants et équipe passent par Telegram vers le bot ; l'équipe utilise aussi le back-office web. Le worker collecte le site WordPress. Le bot appelle une API d'IA uniquement pour choisir les documents à renvoyer. La qualification et la génération par IA se font hors outil avec un assistant IA personnel, via export et import dans le back-office. Les trois applications partagent packages/core et une base SQLite.</desc>
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2a44; }
+      .h1 { font-size: 28px; font-weight: 700; }
+      .sub { font-size: 15px; fill: #475569; }
+      .bt { font-size: 17px; font-weight: 700; }
+      .bs { font-size: 13px; fill: #64748b; }
+      .at { font-size: 18px; font-weight: 700; }
+      .tech { font-size: 13px; font-weight: 600; }
+      .li { font-size: 14px; fill: #334155; }
+      .lbl { font-size: 12.5px; font-style: italic; fill: #475569; paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+      .zone { font-size: 13px; font-weight: 600; fill: #64748b; letter-spacing: 0.3px; }
+      .leg { font-size: 13px; fill: #475569; }
+    </style>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1240" height="830" fill="#ffffff"/>
+
+  <text class="h1" x="620" y="46" text-anchor="middle">Architecture technique</text>
+  <text class="sub" x="620" y="74" text-anchor="middle">Monorepo TypeScript · un seul serveur · une base SQLite · IA côté serveur : seulement pour choisir les documents</text>
+
+  <!-- Personnes -->
+  <rect x="60" y="105" width="200" height="72" rx="36" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="bt" x="160" y="137" text-anchor="middle">Militants</text>
+  <text class="bs" x="160" y="158" text-anchor="middle">≈ 100, sur Telegram</text>
+
+  <rect x="300" y="105" width="200" height="72" rx="36" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text class="bt" x="400" y="137" text-anchor="middle">Équipe</text>
+  <text class="bs" x="400" y="158" text-anchor="middle">petite, de confiance</text>
+
+  <!-- Services externes -->
+  <rect x="965" y="105" width="215" height="72" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="bt" x="1072" y="137" text-anchor="middle">melenchon2027.fr</text>
+  <text class="bs" x="1072" y="158" text-anchor="middle">API REST WordPress</text>
+
+  <rect x="525" y="105" width="280" height="72" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="bt" x="665" y="137" text-anchor="middle">Assistant IA personnel</text>
+  <text class="bs" x="665" y="158" text-anchor="middle">qualification et génération, hors outil</text>
+
+  <rect x="60" y="225" width="240" height="52" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="bt" x="180" y="257" text-anchor="middle">Telegram · Bot API</text>
+
+  <rect x="320" y="225" width="145" height="52" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="bt" x="392" y="247" text-anchor="middle">API d'IA</text>
+  <text class="bs" x="392" y="267" text-anchor="middle">choix des documents</text>
+
+  <!-- Serveur -->
+  <rect x="40" y="335" width="1160" height="430" rx="18" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text class="zone" x="60" y="752">SERVEUR (VPS)</text>
+
+  <!-- Flux externes -->
+  <g stroke="#64748b" stroke-width="2.2" fill="none">
+    <line x1="160" y1="181" x2="160" y2="221" marker-start="url(#a)" marker-end="url(#a)"/>
+    <line x1="345" y1="181" x2="292" y2="222" marker-end="url(#a)"/>
+    <line x1="480" y1="181" x2="480" y2="366" marker-end="url(#a)"/>
+    <line x1="180" y1="281" x2="180" y2="366" marker-start="url(#a)" marker-end="url(#a)"/>
+    <line x1="385" y1="281" x2="385" y2="366" marker-start="url(#a)" marker-end="url(#a)"/>
+    <line x1="1072" y1="181" x2="1072" y2="366" marker-end="url(#a)"/>
+    <line x1="640" y1="181" x2="640" y2="366" marker-start="url(#a)" marker-end="url(#a)"/>
+    <line x1="504" y1="141" x2="521" y2="141" marker-end="url(#a)"/>
+  </g>
+  <text class="lbl" x="170" y="206">questions / réponses</text>
+  <text class="lbl" x="336" y="203">push PDF, lien</text>
+  <text class="lbl" x="490" y="300">navigateur</text>
+  <text class="lbl" x="490" y="316">(login Telegram)</text>
+  <text class="lbl" x="190" y="306">webhook</text>
+  <text class="lbl" x="375" y="306" text-anchor="end">question,</text>
+  <text class="lbl" x="375" y="322" text-anchor="end">candidats → ids</text>
+  <text class="lbl" x="1082" y="306">collecte planifiée</text>
+  <text class="lbl" x="650" y="284">↑ export : docs à qualifier, corpus vérifié</text>
+  <text class="lbl" x="650" y="300">↓ import : étiquettes proposées, docs générés</text>
+
+  <!-- Apps -->
+  <rect x="70" y="370" width="330" height="130" rx="12" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+  <text class="at" x="90" y="400">apps/bot</text>
+  <text class="tech" x="390" y="400" text-anchor="end" fill="#1d4ed8">bot Telegram</text>
+  <text class="li" x="90" y="428">• Militant : question → l'IA choisit</text>
+  <text class="li" x="104" y="448">parmi les docs renvoyables → envoi</text>
+  <text class="li" x="90" y="472">• Équipe : push PDF / lien → job</text>
+
+  <rect x="440" y="370" width="330" height="130" rx="12" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text class="at" x="460" y="400">apps/backoffice</text>
+  <text class="tech" x="760" y="400" text-anchor="end" fill="#b45309">UI web</text>
+  <text class="li" x="460" y="428">• Export / import vers l'assistant IA</text>
+  <text class="li" x="460" y="452">• Corriger, verrouiller les étiquettes</text>
+  <text class="li" x="460" y="476">• Valider docs générés · gérer sources</text>
+
+  <rect x="810" y="370" width="360" height="130" rx="12" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
+  <text class="at" x="830" y="400">apps/worker</text>
+  <text class="tech" x="1160" y="400" text-anchor="end" fill="#6d28d9">tâches de fond</text>
+  <text class="li" x="830" y="428">• Collecte WordPress</text>
+  <text class="li" x="830" y="452">• Extraction du texte des PDF</text>
+  <text class="li" x="830" y="476">• Indexation pour la recherche</text>
+
+  <!-- Apps -> core -->
+  <g stroke="#64748b" stroke-width="2.2">
+    <line x1="235" y1="500" x2="235" y2="526" marker-end="url(#a)"/>
+    <line x1="605" y1="500" x2="605" y2="526" marker-end="url(#a)"/>
+    <line x1="990" y1="500" x2="990" y2="526" marker-end="url(#a)"/>
+  </g>
+
+  <!-- Core -->
+  <rect x="70" y="530" width="1100" height="58" rx="12" fill="#1f2a44"/>
+  <text class="at" x="90" y="555" style="fill:#ffffff">packages/core</text>
+  <text class="li" x="90" y="577" style="fill:#cbd5e1">modèle de données · règle de diffusion · verrouillage des corrections humaines · accès base et fichiers</text>
+
+  <!-- Core -> stockage -->
+  <g stroke="#64748b" stroke-width="2.2">
+    <line x1="320" y1="588" x2="320" y2="626" marker-start="url(#a)" marker-end="url(#a)"/>
+    <line x1="1020" y1="588" x2="1020" y2="626" marker-start="url(#a)" marker-end="url(#a)"/>
+  </g>
+
+  <!-- Stockage -->
+  <rect x="70" y="630" width="500" height="96" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="2"/>
+  <g fill="none" stroke="#0f766e" stroke-width="2.2">
+    <ellipse cx="530" cy="656" rx="18" ry="6"/>
+    <path d="M512 656 v24 a18 6 0 0 0 36 0 v-24"/>
+    <path d="M512 668 a18 6 0 0 0 36 0"/>
+  </g>
+  <text class="at" x="90" y="660">SQLite</text>
+  <text class="bs" x="158" y="660">un seul fichier</text>
+  <text class="li" x="90" y="686">Source · Document · Champ · Tag · Filiation</text>
+  <text class="li" x="90" y="708">Utilisateur · Job · index de recherche plein texte</text>
+
+  <rect x="870" y="630" width="300" height="96" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="2"/>
+  <text class="at" x="1020" y="672" text-anchor="middle">Volume fichiers</text>
+  <text class="bs" x="1020" y="694" text-anchor="middle">PDF et images d'origine</text>
+
+  <!-- Légende -->
+  <g>
+    <rect x="60" y="798" width="22" height="14" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+    <text class="leg" x="90" y="810">Personnes</text>
+    <rect x="190" y="798" width="22" height="14" rx="3" fill="#f8fafc" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text class="leg" x="220" y="810">Service externe</text>
+    <rect x="350" y="798" width="22" height="14" rx="3" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+    <text class="leg" x="380" y="810">Application (TypeScript)</text>
+    <rect x="550" y="798" width="22" height="14" rx="3" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+    <text class="leg" x="580" y="810">Stockage</text>
+  </g>
+  <text class="leg" x="1180" y="810" text-anchor="end">Initiative personnelle, non officielle</text>
+</svg>

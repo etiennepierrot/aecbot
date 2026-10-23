@@ -20,8 +20,11 @@ The repo has three clearly separated top-level concerns:
 
 **Target architecture**: `docs/ARCHITECTURE.md` (+ `docs/vue-ensemble.svg`, the non-technical
 overview) describes where the project is heading: a full-TypeScript monorepo (`packages/core`,
-`apps/worker`, `apps/backoffice`, `apps/bot`) on SQLite, with AI qualification overridable by
-humans, human-validated generated documents, and a Telegram bot. The Python `pipeline/` below is
+`apps/worker`, `apps/backoffice`, `apps/bot`) on SQLite and a Telegram bot. The design is **AI-provider-agnostic** (no vendor or model is assumed). The **only server-side AI
+call** is the bot's document selection (the model returns document ids only; the message sent to a
+user is built from stored fields, never AI-written text). AI qualification and generation happen
+outside the tool (personal AI assistant), and their output is imported for human review (human corrections are locked, generated
+documents need human validation). The Python `pipeline/` below is
 the current state and the reference for the port. Read that doc before starting work on any of
 those components.
 
