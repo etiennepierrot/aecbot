@@ -170,7 +170,7 @@ jamais ce filtre. Le code fait référence ; ce tableau en donne la lecture.
 | `packages/core` | Modèle de données (schéma Drizzle), règle `estRenvoyable`, règle de verrouillage des champs, accès DB. Importé par les trois apps. |
 | `apps/worker` | Exécute les jobs : collecte WordPress, extraction de texte (PDF), indexation pour la recherche. Tourne en continu et dépile la table `Job`. N'appelle aucune IA. |
 | `apps/backoffice` | UI web de l'équipe : export des documents à qualifier et du corpus vérifié, import des étiquettes proposées et des documents générés, édition et verrouillage des champs et tags, relecture et validation des documents générés, gestion des sources. Login via « Login with Telegram ». |
-| `apps/bot` | Bot Telegram. Militants : question → choix par l'IA dans le catalogue → documents renvoyables, avec source et avertissement « initiative non officielle ». Seul composant qui appelle une IA. Équipe (identifiée par `telegram_id`) : envoi d'un PDF ou d'un lien → document `reçu` + job d'extraction. |
+| `apps/bot` | Bot Telegram (grammY), messages privés uniquement. Militants : question → choix par l'IA dans le catalogue → envoi des PDF renvoyables en fichiers (le reste en liens), avec avertissement « initiative non officielle ». Seul composant qui appelle une IA. Limite de questions par personne et par heure (en mémoire) pour borner le coût. Le journal ne contient ni la question ni son auteur : seulement le mode (ia, repli, erreur), le nombre de documents et la durée. Configuration par variables d'environnement (voir `CLAUDE.md`). Équipe (identifiée par `telegram_id`) : envoi d'un PDF ou d'un lien → document `reçu` + job d'extraction. |
 
 ## Flux principaux
 
@@ -214,9 +214,12 @@ Comme pour la qualification, AECBot ne fait aucun appel IA et ne paie pas cette 
    diffusion impossible à contourner. Le catalogue est envoyé en premier et toujours dans le même
    ordre (`contexte` de la requête) : un fournisseur qui le met en cache le facture moins cher
    d'une question à l'autre.
-2. **Répondre** (sans IA) : le bot compose le message à partir des champs stockés uniquement
-   (titre, lien, et résumé selon la règle `apercu`) et ajoute l'avertissement « initiative non
-   officielle ».
+2. **Répondre** (sans IA) : le bot **envoie les PDF eux-mêmes** (3 au plus), chacun avec une
+   légende composée de champs stockés (titre, et résumé selon la règle `apercu`). Telegram
+   télécharge le fichier depuis son URL publique : le contenu n'est toujours pas stocké dans le
+   corpus. Les autres documents choisis (pages web, 4e et 5e choix, PDF de plus de 20 Mo ou
+   injoignables) sont donnés en liens dans un dernier message, qui porte toujours l'avertissement
+   « initiative non officielle ».
 
 Si l'API d'IA est indisponible ou répond mal, le bot se rabat sur une recherche sans IA (index
 MiniSearch en mémoire en phase 1, FTS5 avec SQLite ensuite) avec les mots de la question. La

@@ -1,8 +1,16 @@
 import { parse as parserYaml } from "yaml";
 import { z } from "zod";
-import { CONFIANCES, ORIGINES, STATUTS, VALIDITES, type EtatDiffusion, type Validite } from "../diffusion";
+import {
+  CONFIANCES,
+  ORIGINES,
+  STATUTS,
+  TYPES_MEDIA,
+  VALIDITES,
+  type EtatDiffusion,
+  type TypeMedia,
+  type Validite,
+} from "../diffusion";
 
-export const TYPES_MEDIA = ["pdf", "page", "texte", "image"] as const;
 export const CORPUS = ["aec_2027", "aec_2022", "nfp_2024", "autre"] as const;
 export const LONGUEUR_MAX_RESUME = 1500;
 
@@ -30,7 +38,7 @@ export interface DocumentCorpus extends EtatDiffusion {
   titre: string;
   url: string;
   nomSource: string;
-  typeMedia: (typeof TYPES_MEDIA)[number];
+  typeMedia: TypeMedia;
   datePublication?: string;
   corpus: (typeof CORPUS)[number];
   validite: Validite;

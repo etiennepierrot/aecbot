@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { estRenvoyable, type EtatDiffusion, type Resume, type Validite } from "../diffusion";
+import { estRenvoyable, type EtatDiffusion, type Resume, type TypeMedia, type Validite } from "../diffusion";
 import { sansAccents } from "../texte";
 import type { ModeleIA } from "./modele-ia";
 import { INSTRUCTIONS_CHOISIR, contexteCatalogue, entreeQuestion } from "./prompts";
@@ -8,6 +8,7 @@ export interface Candidat extends EtatDiffusion {
   id: string;
   titre: string;
   url: string;
+  typeMedia: TypeMedia;
   validite: Validite;
   themes: string[];
   tags: string[];

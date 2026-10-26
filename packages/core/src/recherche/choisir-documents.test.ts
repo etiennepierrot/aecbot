@@ -14,6 +14,7 @@ function candidat(id: string, surcharge: Partial<Candidat> = {}): Candidat {
     id,
     titre: `Document ${id}`,
     url: `https://exemple.test/${id}`,
+    typeMedia: "pdf",
     origine: "wp",
     statut: "qualifie",
     confianceSource: "officielle",
