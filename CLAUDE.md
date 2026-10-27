@@ -67,13 +67,23 @@ specific document, after `extract_pdf.py`, before `build_corpus.py`.
 The Python pipeline has no lint/test command — correctness there means re-running the pipeline and
 checking the manifests (counts of included/excluded/error/duplicate) described below.
 
-The TypeScript side (npm workspaces, currently only `packages/core`) has tests and a typecheck, run
+The TypeScript side (npm workspaces: `packages/core`, `apps/bot`) has tests and a typecheck, run
 from the repo root:
 
 ```bash
 npm install
 npm test             # vitest, all workspaces
 npm run typecheck    # tsc --noEmit, all workspaces
+```
+
+The Telegram bot (`apps/bot`, grammY, long polling) reads its configuration from the environment:
+`TELEGRAM_BOT_TOKEN`, `OPENROUTER_API_KEY`, `OPENROUTER_MODEL` (e.g. `anthropic/claude-haiku-5.5`),
+`AECBOT_CORPUS` (folder of corpus Markdown files) and optionally `AECBOT_QUESTIONS_PAR_HEURE`
+(per-user limit, default 20). Never log a question's text or its author (`EvenementQuestion` only
+carries mode, document count and duration).
+
+```bash
+npm run start -w @aecbot/bot
 ```
 
 Before re-running the full pipeline (which re-downloads 265 MB of PDFs), check whether there's

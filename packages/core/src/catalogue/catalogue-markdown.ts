@@ -81,6 +81,7 @@ function versCandidat(doc: DocumentCorpus): Candidat {
     id: doc.id,
     titre: doc.titre,
     url: doc.url,
+    typeMedia: doc.typeMedia,
     origine: doc.origine,
     statut: doc.statut,
     confianceSource: doc.confianceSource,
